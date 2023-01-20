@@ -14,14 +14,16 @@
       }
 
       .lineup-slot {
-        width: 200px;
-        height: 50px;
-        border: 1px solid black;
-        margin: 5px;
+        width: 500px;
+        border: 2px solid black;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
 
       .player {
-        width: 90px;
+        width: 250px;
         height: 90px;
         background-color: #ccc;
         text-align: center;
@@ -30,6 +32,11 @@
         cursor: move;
         }
 
+      .lineup-slot .player {
+        width: 350px;
+        height: 70px;
+        text-align: center;
+        }
 
 
     </style>
@@ -42,7 +49,7 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Teams
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
           <div class="players-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 35px;">
@@ -63,126 +70,605 @@
           </div>
         </div>
         <div class="col-3">
-          <div class="rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 87px;">
-            <p>This rectangle will display cumulative stats.</p>
+          <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 87px;">
+            
           </div>
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
     <script>
-        var teams = ["Arizona Diamondbacks", "Atlanta Braves", "Baltimore Orioles", "Boston Red Sox", "Chicago Cubs", "Chicago White Sox", "Cincinnati Reds", "Cleveland Indians", "Colorado Rockies", "Detroit Tigers", "Houston Astros", "Kansas City Royals", "Los Angeles Angels", "Los Angeles Dodgers", "Miami Marlins", "Milwaukee Brewers", "Minnesota Twins", "New York Mets", "New York Yankees", "Oakland Athletics", "Philadelphia Phillies", "Pittsburgh Pirates", "San Diego Padres", "San Francisco Giants", "Seattle Mariners", "St. Louis Cardinals", "Tampa Bay Rays", "Texas Rangers", "Toronto Blue Jays", "Washington Nationals"];
-        var players = {
-        "Arizona Diamondbacks": ["Player 1", "Player 2", "Player 3", "Player 4"],
-        "Atlanta Braves": ["Player 5", "Player 6", "Player 7", "Player 8"],
-        "Baltimore Orioles": ["Player 9", "Player 10", "Player 11", "Player 12"],
-        "Boston Red Sox": ["Player 13", "Player 14", "Player 15", "Player 16"],
-        "Chicago Cubs": ["Player 17", "Player 18", "Player 19", "Player 20"],
-        "Chicago White Sox": ["Player 21", "Player 22", "Player 23", "Player 24"],
-        "Cincinnati Reds": ["Player 25", "Player 26", "Player 27", "Player 28"],
-        "Cleveland Indians": ["Player 29", "Player 30", "Player 31", "Player 32"],
-        "Colorado Rockies": ["Player 33", "Player 34", "Player 35", "Player 36"],
-        "Detroit Tigers": ["Player 37", "Player 38", "Player 39", "Player 40"],
-        "Houston Astros": ["Player 41", "Player 42", "Player 43", "Player 44"],
-        "Kansas City Royals": ["Player 45", "Player 46", "Player 47", "Player 48"],
-        "Los Angeles Angels": ["Player 49", "Player 50", "Player 51", "Player 52"],
-        "Los Angeles Dodgers": ["Player 53", "Player 54", "Player 55", "Player 56"],
-        "Miami Marlins": ["Player 57", "Player 58", "Player 59", "Player 60"],
-        "Milwaukee Brewers": ["Player 61", "Player 62", "Player 63", "Player 64"],
-        "Minnesota Twins": ["Player 65", "Player 66", "Player 67", "Player 68"],
-        "New York Mets": ["Player 69", "Player 70", "Player 71", "Player 72"],
-        "New York Yankees": ["Player 73", "Player 74", "Player 75", "Player 76"],
-        "Oakland Athletics": ["Player 77", "Player 78", "Player 79", "Player 80"],
-        "Philadelphia Phillies": ["Player 81", "Player 82", "Player 83", "Player 84"],
-        "Pittsburgh Pirates": ["Player 85", "Player 86", "Player 87", "Player 88"],
-        "San Diego Padres": ["Player 89", "Player 90", "Player 91", "Player 92"],
-        "San Francisco Giants": ["Player 93", "Player 94", "Player 95", "Player 96"],
-        "Seattle Mariners": ["Player 97", "Player 98", "Player 99", "Player 100"],
-        "St. Louis Cardinals": ["Player 101", "Player 102", "Player 103", "Player 104"],
-        "Tampa Bay Rays": ["Player 105", "Player 106", "Player 107", "Player 108"],
-        "Texas Rangers": ["Player 109", "Player 110", "Player 111", "Player 112"],
-        "Toronto Blue Jays": ["Player 113", "Player 114", "Player 115", "Player 116"],
-        "Washington Nationals": ["Player 117", "Player 118", "Player 119", "Player 120"]
-    };
 
-    var teamColors = {
-        "Arizona Diamondbacks": ["#A71930", "#000000"],
-        "Atlanta Braves": ["#13274F", "#CE1141"],
-        "Baltimore Orioles": ["#DF4601", "#000000"],
-        "Boston Red Sox": ["#C60C30", "#FFFFFF"],
-        "Chicago Cubs": ["#0E3386", "#CC3433"],
-        "Chicago White Sox": ["#000000", "#C4CED4"],
-        "Cincinnati Reds": ["#C6011F", "#000000"],
-        "Cleveland Indians": ["#E31937", "#000000"],
-        "Colorado Rockies": ["#333366", "#C4CED4"],
-        "Detroit Tigers": ["#0C2340", "#F2DCDE"],
-        "Houston Astros": ["#EB6E1F", "#002D62"],
-        "Kansas City Royals": ["#004687", "#C09A5B"],
-        "Los Angeles Angels": ["#BA0021", "#003263"],
-        "Los Angeles Dodgers": ["#005A9C", "#FFFFFF"],
-        "Miami Marlins": ["#0077C8", "#F9423A"],
-        "Milwaukee Brewers": ["#0A2351", "#B6922E"],
-        "Minnesota Twins": ["#002B5C", "#D31145"],
-        "New York Mets": ["#002D72", "#DF4601"],
-        "New York Yankees": ["#002D72", "#FFFFFF"],
-        "Oakland Athletics": ["#003831", "#EFB21E"],
-        "Philadelphia Phillies": ["#E81828", "#FFFFFF"],
-        "Pittsburgh Pirates": ["#FDB827", "#000000"],
-        "San Diego Padres": ["#2F241D", "#FEC325"],
-        "San Francisco Giants": ["#FD5A1E", "#000000"],
-        "Seattle Mariners": ["#0C2C56", "#005C5C"],
-        "St. Louis Cardinals": ["#C41E3A", "#FFFFFF"],
-        "Tampa Bay Rays": ["#092C5C", "#8FBCE6"],
-        "Texas Rangers": ["#BD3039", "#FFFFFF"],
-        "Toronto Blue Jays": ["#134A8E", "#1D2D5C"],
-        "Washington Nationals": ["#AB0003", "#BA122B"]
-    };
-
-    var playerStats = {
-    "Player 1": {
-        "AVG": 0.307,
-        "WAR": 3.2,
-        "OPS": 0.906
-    },
-    "Player 2": {
-        "AVG": 0.278,
-        "WAR": 2.7,
-        "OPS": 0.817
-    },
-    "Player 3": {
-        "AVG": 0.289,
-        "WAR": 3.0,
-        "OPS": 0.858
-    },
-    // and so on for all players
-    };
-
-    
-    $(document).ready(function() {
-        for (var i = 0; i < teams.length; i++) {
-            $(".dropdown-menu").append("<a class='dropdown-item team-name' href='#'>" + teams[i] + "</a>");
+        var data = {
+        "Arizona Diamondbacks": {
+            "name": "Arizona Diamondbacks",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8}},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8}}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Atlanta Braves": {
+            "name": "Atlanta Braves",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Baltimore Orioles": {
+            "name": "Baltimore Orioles",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Boston Red Sox": {
+            "name": "Boston Red Sox",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Chicago Cubs": {
+            "name": "Chicago Cubs",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Chicago White Sox": {
+            "name": "Chicago White Sox",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Cincinnati Reds": {
+            "name": "Cincinnati Reds",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Cleveland Indians": {
+            "name": "Cleveland Indians",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Colorado Rockies": {
+            "name": "Colorado Rockies",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Detroit Tigers": {
+            "name": "Detroit Tigers",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Houston Astros": {
+            "name": "Houston Astros",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Kansas City Royals": {
+            "name": "Kansas City Royals",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Los Angeles Angels": {
+            "name": "Los Angeles Angels",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Los Angeles Dodgers": {
+            "name": "Los Angeles Dodgers",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Miami Marlins": {
+            "name": "Miami Marlins",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Milwaukee Brewers": {
+            "name": "Milwaukee Brewers",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Minnesota Twins": {
+            "name": "Minnesota Twins",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "New York Mets": {
+            "name": "New York Mets",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "New York Yankees": {
+            "name": "New York Yankees",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Oakland Athletics": {
+            "name": "Oakland Athletics",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Philadelphia Phillies": {
+            "name": "Philadelphia Phillies",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Pittsburgh Pirates": {
+            "name": "Pittsburgh Pirates",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "San Diego Padres": {
+            "name": "San Diego Padres",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "San Francisco Giants": {
+            "name": "San Francisco Giants",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Seattle Mariners": {
+            "name": "Seattle Mariners",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "St. Louis Cardinals": {
+            "name": "St. Louis Cardinals",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Tampa Bay Rays": {
+            "name": "Tampa Bay Rays",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Texas Rangers": {
+            "name": "Texas Rangers",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Toronto Blue Jays": {
+            "name": "Toronto Blue Jays",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
+        },
+        "Washington Nationals": {
+            "name": "Washington Nationals",
+            "players": [
+                {"name": "Player 1", "stats": {"avg": .300, "WAR": 3.8
+            }},
+                {"name": "Player 2", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 3", "stats": {"avg": .300, "WAR": 3.8
+            }}, 
+                {"name": "Player 4", "stats": {"avg": .300, "WAR": 3.8
+            }}]
         }
-        $(".team-name").click(function() {
-            $(".dropdown-menu").hide();
-            var team = $(this).text();
-            $(".players-rectangle").empty();
-            for (var i = 0; i < players[team].length; i++) {
-                $(".players-rectangle").append("<div class='player' style='background-color: "+ teamColors[team][0] +"; color: "+ teamColors[team][1] +";'>" + players[team][i] + "</div>");
+    };
+
+    var teamColorsData = {
+    "Arizona Diamondbacks": ["#A71930", "#000000"],
+    "Atlanta Braves": ["#13274F", "#CE1141"],
+    "Baltimore Orioles": ["#DF4601", "#000000"],
+    "Boston Red Sox": ["#C60C30", "#FFFFFF"],
+    "Chicago Cubs": ["#0E3386", "#CC3433"],
+    "Chicago White Sox": ["#000000", "#C4CED4"],
+    "Cincinnati Reds": ["#C6011F", "#000000"],
+    "Cleveland Indians": ["#E31937", "#000000"],
+    "Colorado Rockies": ["#333366", "#C4CED4"],
+    "Detroit Tigers": ["#0C2340", "#F2DCDE"],
+    "Houston Astros": ["#EB6E1F", "#002D62"],
+    "Kansas City Royals": ["#004687", "#C09A5B"],
+    "Los Angeles Angels": ["#BA0021", "#003263"],
+    "Los Angeles Dodgers": ["#005A9C", "#FFFFFF"],
+    "Miami Marlins": ["#0077C8", "#F9423A"],
+    "Milwaukee Brewers": ["#0A2351", "#B6922E"],
+    "Minnesota Twins": ["#002B5C", "#D31145"],
+    "New York Mets": ["#002D72", "#DF4601"],
+    "New York Yankees": ["#002D72", "#FFFFFF"],
+    "Oakland Athletics": ["#003831", "#EFB21E"],
+    "Philadelphia Phillies": ["#E81828", "#FFFFFF"],
+    "Pittsburgh Pirates": ["#FDB827", "#000000"],
+    "San Diego Padres": ["#2F241D", "#FEC325"],
+    "San Francisco Giants": ["#FD5A1E", "#000000"],
+    "Seattle Mariners": ["#0C2C56", "#005C5C"],
+    "St. Louis Cardinals": ["#C41E3A", "#FFFFFF"],
+    "Tampa Bay Rays": ["#092C5C", "#8FBCE6"],
+    "Texas Rangers": ["#BD3039", "#FFFFFF"],
+    "Toronto Blue Jays": ["#134A8E", "#1D2D5C"],
+    "Washington Nationals": ["#AB0003", "#BA122B"]
+    };
+
+    // Select the dropdown menu element
+    var dropdown = $('.dropdown-menu');
+
+    // Iterate over the teams in the data object
+    for (var team in data) {
+        var teamName = data[team].name;
+        // Create a new option element
+        var option = $('<a>', {
+            class: "dropdown-item",
+            href: "#",
+            text: teamName
+        });
+        // Add the option element to the dropdown menu
+        dropdown.append(option);
+    }
+
+
+    // Get the players-rectangle element
+    var playersRectangle = document.querySelector('.players-rectangle');
+    // Add a dragover event listener to the players-rectangle
+    playersRectangle.addEventListener('dragover', function(event) {
+        event.preventDefault();
+    });
+
+    // Add a drop event listener to the players-rectangle
+    playersRectangle.addEventListener('drop', function(event) {
+        event.preventDefault();
+        var playerId = event.dataTransfer.getData("text");
+        var player = document.getElementById(playerId);
+        playersRectangle.appendChild(player);
+    });
+
+    // Get the stats-rectangle element
+    var statsRectangle = document.querySelector('.stats-rectangle');
+
+    // Add a global playerId variable
+    let playerId;
+
+    // Add a click event listener to each team option in the dropdown menu
+    var teamOptions = document.querySelectorAll('.dropdown-item');
+    teamOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            var teamName = this.innerHTML;
+            var teamPlayers = data[teamName].players;
+            var teamColors = teamColorsData[teamName];
+
+            // Clear the players-rectangle
+            playersRectangle.innerHTML = '';
+
+            // Clear all the lineup slots
+            var lineupSlots = document.querySelectorAll('.lineup-slot');
+            lineupSlots.forEach(function(slot) {
+                slot.innerHTML = '';
+            });
+
+            // Iterate over the players in the selected team
+
+            for (var i = 0; i < teamPlayers.length; i++) {
+                var player = teamPlayers[i];
+                var playerName = player.name;
+                var playerWAR = player.stats.WAR;
+                var playerAVG = player.stats.avg;
+
+                // Create a new div element for the player
+                
+                
+                // Create a new div element for the player
+                (function(){
+                    var playerDiv = document.createElement('div');
+                    playerDiv.classList.add("player", "lineup-player");
+                    playerDiv.innerHTML = playerName;
+                    playerDiv.style.backgroundColor = teamColors[0];
+                    playerDiv.style.color = teamColors[1];
+                    playerDiv.setAttribute("draggable", "true");
+                    playerDiv.id = playerName;
+                    playerDiv.addEventListener("dragstart", function(event) {
+                        event.dataTransfer.setData("text", event.target.id);
+                    });
+                    playerDiv.addEventListener("dragover", function(event) {
+                        event.preventDefault();
+                    });
+                    playerDiv.addEventListener("drop", function(event) {
+                        event.preventDefault();
+                        lineupRectangle.appendChild(playerDiv);
+                    });
+
+                    // Add the player div to the players-rectangle
+                    playersRectangle.appendChild(playerDiv);
+                })();
             }
+                // Clear the stats-rectangle
+                statsRectangle.innerHTML = '';
+
+                // Get all the players in the lineup-rectangle
+                 var lineupPlayers = document.querySelectorAll('.lineup-slot .player');
+
+                // Initialize variables to store the total WAR and AVG
+                var totalWAR = 0;
+                var totalAVG = 0;
+
+                // Iterate over the players in the lineup-rectangle
+                for (var i = 0; i < lineupPlayers.length; i++) {
+                    var playerName = lineupPlayers[i].innerHTML;
+                    var player = data[teamName].players.find(function(p) {
+                        return p.name === playerName;
+                    });
+
+                    // Add the player's WAR and AVG to the total
+                    totalWAR += player.WAR;
+                    totalAVG += player.avg;
+                }
+
+                // Create a new p element to display the total WAR
+                var warP = document.createElement('p');
+                warP.innerHTML = 'Total WAR: ' + totalWAR;
+                statsRectangle.appendChild(warP);
+
+                // Create a new p element to display the average AVG
+                var avgP = document.createElement('p');
+                avgP.innerHTML = 'Avg AVG: ' + (totalAVG / lineupPlayers.length).toFixed(3);
+                statsRectangle.appendChild(avgP);
+
         });
     });
 
     
-    $('.dropdown-menu').css({
-    'max-height':'200px',
-    'overflow-y':'scroll'
+
+    var lineupSlots = document.querySelectorAll(".lineup-slot");
+    // Add a dragover event listener to each lineup slot
+    lineupSlots.forEach(function(slot) {
+        slot.addEventListener('dragover', function(event) {
+            event.preventDefault();
+        });
+        // Add a drop event listener to each lineup slot
+        slot.addEventListener('drop', function(event) {
+            event.preventDefault();
+            var playerId = event.dataTransfer.getData("text");
+            var player = document.getElementById(playerId);
+            if (slot.childNodes.length === 0) {
+                slot.appendChild(player);
+            }
+        });
+    });
+    lineupSlots.forEach(function(slot) {
+    slot.addEventListener('change', function() {
+        var totalWAR = 0;
+        var avgAVG = 0;
+        var numPlayers = 0;
+
+        // Iterate over each player in the lineup
+        for (var i = 0; i < lineupSlots.length; i++) {
+            var slot = lineupSlots[i];
+            var playerId = slot.firstChild.id;
+            var player = data[teamName].players.find(function(p) { return p.name == playerId; });
+            if(player) {
+                if(player.WAR){
+                    totalWAR += player.WAR;
+                }
+                if(player.avg){
+                    avgAVG += player.avg;
+                    numPlayers++;
+                }
+            }
+        }
+
+        // Update the stats in the stat-rectangle
+        if(numPlayers != 0) avgAVG /= numPlayers;
+        var statsRectangle = document.querySelector('.stats-rectangle');
+        statsRectangle.innerHTML = '<p>Total WAR: ' + totalWAR + '</p><p>Avg AVG: ' + avgAVG + '</p>';
+    });
+});
+    
+    var lineupRectangle = document.querySelector(".lineup-rectangle");
+    lineupRectangle.addEventListener("dragover", function(event) {
+        event.preventDefault();
+    });
+    lineupRectangle.addEventListener("drop", function(event) {
+        event.preventDefault();
+        var playerId = event.dataTransfer.getData("text");
+        var playerElement = document.getElementById(playerId);
+        if (event.target.children.length === 0) {
+        event.target.appendChild(player);
+        player.classList.add("lineup-player");
+        }
     });
 
-    $("#dropdownMenuButton").click(function() {
-        $(".dropdown-menu").toggle();
-    });
+    // Check if the player is already present in the lineup-rectangle
+    var existingPlayer = lineupRectangle.querySelector('#' + playerId);
+    if (existingPlayer) {
+        lineupRectangle.replaceChild(playerDiv, existingPlayer);
+    } else {
+        lineupRectangle.appendChild(playerDiv);
+    }
 
 
 
