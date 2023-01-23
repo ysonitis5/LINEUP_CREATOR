@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>MLB Lineup Generator</title>
+    <title>MLB Lineup Creator</title>
     <style>
       /* Custom CSS for green background and black text */
       body {
@@ -520,6 +520,8 @@
     // Select the dropdown menu element
     var dropdown = $('.dropdown-menu');
 
+    let selectedTeamName;
+
     // Iterate over the teams in the data object
     for (var team in data) {
         var teamName = data[team].name;
@@ -562,9 +564,9 @@
     var teamOptions = document.querySelectorAll('.dropdown-item');
     teamOptions.forEach(function(option) {
         option.addEventListener('click', function() {
-            var teamName = this.innerHTML;
-            var teamPlayers = data[teamName].players;
-            var teamColors = teamColorsData[teamName];
+            selectedTeamName = this.innerHTML;
+            var teamPlayers = data[selectedTeamName].players;
+            var teamColors = teamColorsData[selectedTeamName];
 
             // Clear the players-rectangle
             playersRectangle.innerHTML = '';
@@ -640,7 +642,7 @@
             // Iterate over the players in the lineup-rectangle
             for (var i = 0; i < lineupPlayers.length; i++) {
                 var playerName = lineupPlayers[i].innerHTML;
-                var player = data[teamName].players.find(function(p) {
+                var player = data[selectedTeamName].players.find(function(p) {
                     return p.name === playerName;
                 });
 
@@ -714,13 +716,6 @@ resetButton.addEventListener("click", function() {
         playersRectangle.appendChild(player);
     }
 });
-
-    var img = new Image();
-    img.crossOrigin = "anonymous";
-    img.src = "https://cors-anywhere.herokuapp.com/" + "fanatics.png";
-    img.classList.add("fanatics");
-    var lineupRectangle = document.querySelector(".lineup-rectangle");
-    lineupRectangle.appendChild(img);
 
 
 
