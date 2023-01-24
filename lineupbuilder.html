@@ -50,7 +50,8 @@
         position: absolute;
         left: 370px;
         top: 290px;
-        }
+        }    
+
 
     </style>
   </head>
@@ -1483,20 +1484,7 @@
             }
         });
     });
-    
-    var lineupRectangle = document.querySelector(".lineup-rectangle");
-    lineupRectangle.addEventListener("dragover", function(event) {
-        event.preventDefault();
-    });
-    lineupRectangle.addEventListener("drop", function(event) {
-        event.preventDefault();
-        var playerId = event.dataTransfer.getData("text");
-        var playerElement = document.getElementById(playerId);
-        if (event.target.children.length === 0) {
-        event.target.appendChild(player);
-        player.classList.add("lineup-player");
-        }
-    });
+
 
 
     // Check if the player is already present in the lineup-rectangle
@@ -1511,7 +1499,7 @@
     var resetButton = document.getElementById("reset-button");
 
     // Add a click event listener to the reset button
-resetButton.addEventListener("click", function() {
+    resetButton.addEventListener("click", function() {
     // Get all the players in the lineup rectangle
     var players = document.querySelectorAll(".lineup-rectangle .player");
 
