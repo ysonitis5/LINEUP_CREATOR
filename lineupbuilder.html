@@ -1329,7 +1329,7 @@
     "Tampa Bay Rays": ["#092C5C", "#8FBCE6"],
     "Texas Rangers": ["#BD3039", "#FFFFFF"],
     "Toronto Blue Jays": ["#134A8E", "#1D2D5C"],
-    "Washington Nationals": ["#AB0003", "#BA122B"]
+    "Washington Nationals": ["#AB0003", "#FFFFFF"]
     };
 
     
@@ -1460,6 +1460,9 @@
             // Initialize variables to store the total WAR and AVG
             var totalWAR = 0;
             var totalAVG = 0;
+            var totalSB = 0;
+            var totalHR = 0;
+            var totalOPS = 0;
 
             // Iterate over the players in the lineup-rectangle
             for (var i = 0; i < lineupPlayers.length; i++) {
@@ -1472,6 +1475,9 @@
                 if (player.hasOwnProperty("stats")) {
                     totalWAR += player.stats.WAR;
                     totalAVG += player.stats.avg;
+                    totalHR += player.stats.HR;
+                    totalOPS += player.stats.OPS;
+                    totalSB += player.stats['Stolen Bases']
                 }
             }
 
@@ -1486,6 +1492,21 @@
             var avgP = document.createElement('p');
             avgP.innerHTML = 'Avg AVG: ' + (totalAVG / lineupPlayers.length).toFixed(3);
             statsRectangle.appendChild(avgP);
+
+            // Create a new p element to display the average OPS
+            var opsP = document.createElement('p');
+            opsP.innerHTML = 'Avg OPS: ' + (totalOPS / lineupPlayers.length).toFixed(3);
+            statsRectangle.appendChild(opsP);
+
+            // Create a new p element to display the total HR
+            var hrP = document.createElement('p');
+            hrP.innerHTML = 'Total Homers: ' + totalHR;
+            statsRectangle.appendChild(hrP);
+
+            // Create a new p element to display the total SB
+            var sbP = document.createElement('p');
+            sbP.innerHTML = 'Total Stolen Bases: ' + totalSB;
+            statsRectangle.appendChild(sbP);
 
 
             }
@@ -1502,6 +1523,8 @@
     resetButton.addEventListener("click", function() {
         // Get all the players in the lineup slots
         var playersInLineupSlots = document.querySelectorAll(".lineup-slot .player");
+        // Clear the stats-rectangle
+        statsRectangle.innerHTML = '';
 
         // Loop through each player in the lineup slots
         for (var i = 0; i < playersInLineupSlots.length; i++) {
