@@ -15,17 +15,25 @@
 
       .players-rectangle {
         overflow-y: scroll;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80vh;
+      }
+
+      .lineup-rectangle{        
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80vh;
       }
 
       .lineup-slot {
         object-fit: contain;
         position: relative;
-        width: 500px;
+        width: 45%;
         border: 2px solid black;
-        height: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 11.12%;
+        flex-grow: 0;
+        flex-shrink: 1;        
         }
 
       .lineup-number {
@@ -34,52 +42,55 @@
         right: 0;
     }
 
-      .player {
-        width: 250px;
-        height: 90px;
-        background-color: #ccc;
+      .player .linup-player  {        
+        display: flex;
         text-align: center;
-        line-height: 90px;
-        color: #fff;
-        cursor: move;
+        flex-grow: 0;
+        flex-shrink: 1;
+        align-items: center;
+        width: 80em;
+        height: 30em;
         }
 
       .lineup-slot .player {
-        width: 350px;
-        height: 70px;
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
         }
 
-        .fanatics{
+        .lineup-rectangle .fanatics{
         object-fit: contain;
-        transform: rotate(90deg);
-        height: 100px;
-        width: 400px;
         position: absolute;
-        left: 370px;
-        top: 290px;
-        }    
+        flex-grow: 0;
+        flex-shrink: 1;
+        right: -20%;
+        bottom: 50%;
+        transform: rotate(90deg);
+        width: 70%;        
+        height: 25%;
+}
+
+  
 
         .stat-slot {
-        position: relative;
-        width: 200px;
-        border: 2px solid black;
-        height: 65px;
-        display: flex;
-        justify-content: center;
-        align-items: center;}
-
-        .stat {
         object-fit: contain;
         position: relative;
-        width: 100px;
-        border: 2px solid black;
-        height: 60px;
+        width: 90%;
+        height: 90%x;
         display: flex;
-        left: 500px;
-        top: 00px;
-
-        }
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        border: 2px solid black;
+    }
 
 
     </style>
@@ -98,13 +109,13 @@
           
           <button id="reset-button">Reset</button>
           <button id="download-button">Download</button>
-          <div class="players-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 35px;">
+          <div class="players-rectangle rectangle d-flex flex-column" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 35px;">
           </div>
         </div>
         <div class="col-6">
             
           <h2 class="text-center" style="text-shadow: 2px 2px #000000; background-color: #fcfcfc; font-family: 'Cinzel', cursive; font-size: 50px;">MLB LINEUP CREATOR</h2>
-          <div class="lineup-rectangle rectangle d-flex flex-column" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 50px;">
+          <div class="lineup-rectangle rectangle d-flex flex-column" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 50px;">
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
@@ -136,31 +147,31 @@
         "Arizona Diamondbacks": {
             "name": "Arizona Diamondbacks",
             "players": [
-            {"name": "Jose Herrera 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Jose Herrera 11", "stats": {"avg": .189, "WAR": 10.4, "OPS": .457, "HR": 0, "Stolen Bases": 0, "OBP": .250, "SO": 34, "RBI": 5
             }},
-                {"name": "Carson Kelly 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Carson Kelly 18", "stats": {"avg": .211, "WAR": 3.8, "OPS": .617, "HR": 7, "Stolen Bases": 2, "OBP": .282, "SO": 71, "RBI": 35
             }}, 
-                {"name": "Gabriel Moreno 14", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Gabriel Moreno 14", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nick Ahmed 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Ahmed 13", "stats": {"avg": .231, "WAR": 3.8, "OPS": .702, "HR": 3, "Stolen Bases": 0, "OBP": .259, "SO": 15, "RBI": 7
             }},
-                {"name": "Blaze Alexander 62", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Blaze Alexander 62", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Seth Beer 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Seth Beer 28", "stats": {"avg": .189, "WAR": 3.8, "OPS": .521, "HR": 1, "Stolen Bases": 0, "OBP": .278, "SO": 31, "RBI": 9
             }}, 
-                {"name": "Diego Castillo 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!!Diego Castillo 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Evan Longoria 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Evan Longoria 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ketel Marte 4", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ketel Marte 4", "stats": {"avg": .240, "WAR": 10.4, "OPS": .727, "HR": 12, "Stolen Bases": 5, "OBP": .321, "SO": 101, "RBI": 52
             }},
-                {"name": "Geraldo Perdomo 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Geraldo Perdomo 2", "stats": {"avg": .195, "WAR": 3.8, "OPS": .777, "HR": 5, "Stolen Bases": 9, "OBP": .285, "SO": 103, "RBI": 40
             }}, 
-                {"name": "Emmanuel Rivera 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Emmanuel Rivera 15", "stats": {"avg": .227, "WAR": 3.8, "OPS": .728, "HR": 6, "Stolen Bases": 1, "OBP": .304, "SO": 37, "RBI": 41
             }}, 
-                {"name": "Josh Rojas 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Rojas 10", "stats": {"avg": .269, "WAR": 3.8, "OPS": .739, "HR": 9, "Stolen Bases": 23, "OBP": .349, "SO": 98, "RBI": 56
             }},
-                {"name": "Christian Walker 53", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Christian Walker 53", "stats": {"avg": .242, "WAR": 10.4, "OPS": .804, "HR": 12, "Stolen Bases": 2, "OBP": .327, "SO": 131, "RBI": 74
             }},
                 {"name": "Jorge Barrosa 81", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
@@ -1480,7 +1491,6 @@
             var lineupPlayers = document.querySelectorAll('.lineup-slot .player');
 
             // Initialize variables to store the total WAR and AVG
-            var totalWAR = 0;
             var totalAVG = 0;
             var totalSB = 0;
             var totalHR = 0;
@@ -1498,7 +1508,6 @@
 
                 // Add the player's WAR and AVG to the total
                 if (player.hasOwnProperty("stats")) {
-                    totalWAR += player.stats.WAR;
                     totalAVG += player.stats.avg;
                     totalHR += player.stats.HR;
                     totalOPS += player.stats.OPS;
@@ -1512,11 +1521,11 @@
             // Get the stats-rectangle element
                 var statsRectangle = document.querySelector('.stats-rectangle');
 
-            // Check if there are already 8 stat slots
+            // Check if there are already 7 stat slots
             var existingStatSlots = document.querySelectorAll('.stat-slot');
-            if (existingStatSlots.length < 8) {
+            if (existingStatSlots.length < 7) {
                 // Create five new div elements with the class "stat-slot"
-                for (var i = 0; i < 8; i++) {
+                for (var i = 0; i < 7; i++) {
                     var statSlot = document.createElement('div');
                     statSlot.classList.add("stat-slot");
                     // Append the stat-slot to the stats-rectangle
@@ -1526,10 +1535,6 @@
 
             console.log(player.name, player.stats);
             var statsSlots = document.querySelectorAll('.stat-slot');
-
-            // Create a new p element to display the total WAR
-            var warP = document.createElement('p');
-            warP.innerHTML = 'Team WAR: ' + totalWAR;
             
 
             // Create a new p element to display the average AVG
@@ -1544,12 +1549,12 @@
 
             // Create a new p element to display the total HR
             var hrP = document.createElement('p');
-            hrP.innerHTML = 'Homers per game: ' + (totalHR / 162);
+            hrP.innerHTML = 'Homers per game: ' + (totalHR / 162).toFixed(2);
            
 
             // Create a new p element to display the total SB
             var sbP = document.createElement('p');
-            sbP.innerHTML = 'Stolen Bases per game: ' + (totalSB / 162);
+            sbP.innerHTML = 'Stolen Bases per game: ' + (totalSB / 162).toFixed(2);
             
             // Create a new p element to display the total SB
             var obpbP = document.createElement('p');
@@ -1557,13 +1562,13 @@
 
             // Create a new p element to display the total SB
             var soP = document.createElement('p');
-            soP.innerHTML = 'Strike Outs per game: ' + (totalSO / 162);
+            soP.innerHTML = 'Strike Outs per game: ' + (totalSO / 162).toFixed(2);
 
             // Create a new p element to display the total SB
             var rbiP = document.createElement('p');
-            rbiP.innerHTML = 'RBIs per game: ' + (totalRBI / 162);
+            rbiP.innerHTML = 'RBIs per game: ' + (totalRBI / 162).toFixed(2);
 
-            var stats = [warP, avgP, opsP, hrP, sbP, obpbP, soP, rbiP];
+            var stats = [avgP, opsP, hrP, sbP, obpbP, soP, rbiP];
 
             statsSlots.forEach(function(slot,i){
                 if (slot.hasChildNodes()) {
@@ -1579,6 +1584,7 @@
         });
     });
 
+    
 
 
 
