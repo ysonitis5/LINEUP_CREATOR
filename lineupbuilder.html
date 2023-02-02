@@ -41,11 +41,25 @@
         position: relative;
         width: 25%;
         border: 2px solid black;
+        background-color: aliceblue;
         height: 11.12%;
         flex-grow: 0;
         flex-shrink: 1;        
         right: -70%;
         bottom: 58%;   
+      }
+
+      .leaguewide-stat {
+        object-fit: contain;
+        position: relative;
+        width: 80%;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 7%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 0%;
+        bottom: -51%;   
       }
 
       .lineup-number {
@@ -54,14 +68,15 @@
         right: 0;
     }
 
-      .player .linup-player  {        
+    .players-rectangle .player {        
+        width: 90%;
+        height: 90%;
         display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         flex-grow: 0;
         flex-shrink: 1;
-        align-items: center;
-        width: 80em;
-        height: 30em;
         }
 
       .lineup-slot .player {
@@ -91,32 +106,25 @@
 .stat-slot {
         object-fit: contain;
         position: relative;
-        width: 90%;
-        height: 90%x;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-grow: 0;
-        flex-shrink: 1;
+        width: 80%;
         border: 2px solid black;
-    }
-
-    .stat-slot .p {
-        text-align: center;
-        
+        background-color: aliceblue;
+        height: 7%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 0%;
+        bottom: 49%;  
     }
 
   
         .p {
             width: 90%;
             height: 90%;
-            background-color: rgb(117, 127, 136);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            font-weight: bold;
             flex-grow: 0;
             flex-shrink: 1;
             font-size-adjust: inherit;
@@ -152,7 +160,7 @@
           </div>
           <button id="help-button">Help</button>
             <div id="help-popup" class="hidden">
-            <p>Welcome to the site! To use, choose a team then build a lineup. Then simply drag and drop three stats into the boxes besides the lineup. Only one stat can be placed in each box. To remove a stat, simply drag it out and drag in a new stat.</p>
+            <p>Welcome to Lineup Creator! To use, first choose a team then build a lineup by dragging players into the lineup. Then simply drag and drop three stats into the boxes besides the lineup. Only one stat can be placed in each box. To remove a stat, simply drag it out and drag in a new stat.</p>
             <button id="close-popup">Close</button>
             </div>
           <button id="reset-button">Reset</button>
@@ -162,7 +170,7 @@
         </div>
         <div class="col-6">
             
-          <h2 class="text-center" style="text-shadow: 2px 2px #000000; background-color: #fcfcfc; font-family: 'Cinzel', cursive; font-size: 50px;">MLB LINEUP CREATOR</h2>
+          <h2 class="text-center" style="text-shadow: 2px 2px #000000; background-color: #fcfcfc; font-family: 'Cinzel', cursive; font-size: 50px;">LINEUP CREATOR</h2>
           <div class="lineup-rectangle rectangle" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 50px;">
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
@@ -181,7 +189,13 @@
         </div>
         <div class="col-3">
           <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 87px;">
-
+            <div class="leaguewide-stat">League AVG: .243</div>
+            <div class="leaguewide-stat">League OPS: .706</div>
+            <div class="leaguewide-stat">League OBP: .312</div>
+            <div class="leaguewide-stat">League HR/G: 1.07</div>
+            <div class="leaguewide-stat">League RBI/G: 4.09</div>
+            <div class="leaguewide-stat">League SB/G: 0.51</div>
+            <div class="leaguewide-stat">League SO/G: 8.40</div>
           </div>
         </div>
       </div>
@@ -1471,8 +1485,8 @@
             var teamPlayers = data[selectedTeamName].players;
             var teamColors = teamColorsData[selectedTeamName];
 
-            // Clear the stats-rectangle
-            statsRectangle.innerHTML = '';
+             // Remove only the .stats-rectangle p elements
+  statsRectangle.querySelectorAll('.stats-rectangle p').forEach(el => el.remove());
 
             // Clear the players-rectangle
             playersRectangle.innerHTML = '';
@@ -1675,11 +1689,9 @@ $('.lineup-rectangle .lineup-statslot').droppable({
     resetButton.addEventListener("click", function() {
         // Get all the players in the lineup slots
         var playersInLineupSlots = document.querySelectorAll(".lineup-slot .player");
-        // Clear the stats-rectangle
-        statsRectangle.innerHTML = '';
+         // Remove only the .stats-rectangle p elements
+  statsRectangle.querySelectorAll('.stats-rectangle p').forEach(el => el.remove());
 
-        // Clear stats
-        $(".lineup-rectangle .lineup-statslot").empty();
 
         // Loop through each player in the lineup slots
         for (var i = 0; i < playersInLineupSlots.length; i++) {
