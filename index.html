@@ -23,7 +23,18 @@
       .lineup-rectangle{        
         flex-grow: 0;
         flex-shrink: 0;
-        height: 80vh;
+        height: 70vh;
+      }
+
+      .position-rectangle{
+        background-color: #fcfcfc; 
+        border: 4px solid black; 
+        margin-top: 35px;
+        height: 10vh;
+        width: 30vw;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
       }
 
       .lineup-slot {
@@ -75,7 +86,7 @@
         }
 
       .lineup-slot .player {
-        width: 90%;
+        width: 75%;
         height: 90%;
         display: flex;
         align-items: center;
@@ -83,20 +94,10 @@
         text-align: center;
         flex-grow: 0;
         flex-shrink: 1;
+        position: absolute;
+        top: 0;
+        left: 10%;
         }
-
-        .lineup-rectangle .fanatics{
-        object-fit: contain;
-        position: relative;        
-        align-items: right;
-        flex-grow: 0;
-        flex-shrink: 0;
-        right: -50%;
-        bottom: 80%;
-        transform: rotate(90deg);
-        width: 70%;        
-        height: 25%;
-}
 
     .lineup-number {
         object-fit: contain;
@@ -105,12 +106,31 @@
         justify-content: center;
         text-align: center;        
         width: 10%;
+        font-weight: bold;
         border: 2px solid black;
         background-color: aliceblue;
         height: 50%;
         flex-grow: 0;
         flex-shrink: 1;        
         right: 0%;
+        bottom: 0%;
+
+    }
+
+    .lineup-position {
+        object-fit: contain;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 15%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 100%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        left: 75%;
         bottom: 0%;
 
     }
@@ -157,6 +177,14 @@
             display: none;
             }
 
+            .position {
+                margin-right: 10px;
+                font-weight: bolder;
+                font-size: 2rem;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+
     </style>
   </head>
   <body>
@@ -183,7 +211,9 @@
         <div class="col-6">
             
           <h2 class="text-center" style="text-shadow: 2px 2px #000000; background-color: #fcfcfc; font-family: 'Arial', cursive; font-size: 50px;">LINEUP CREATOR</h2>
-          <div class="lineup-rectangle rectangle" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 50px;">
+          <div class="position-rectangle"></div>
+          <div class="lineup-rectangle rectangle" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 30px;">
+            
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
@@ -192,10 +222,11 @@
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
             <div class="lineup-slot"></div>
-            <div class="lineup-slot"></div>          
+            <div class="lineup-slot"></div>         
             <div class="lineup-statslot"></div>
             <div class="lineup-statslot"></div>
             <div class="lineup-statslot"></div>
+            
           </div>
         </div>
         <div class="col-3">
@@ -225,1187 +256,1191 @@
         "Arizona Diamondbacks": {
             "name": "Arizona Diamondbacks",
             "players": [
-            {"name": "Jose Herrera 11", "stats": {"avg": .189, "WAR": 10.4, "OPS": .457, "HR": 0, "Stolen Bases": 0, "OBP": .250, "SO": 34, "RBI": 5
+            {"name": "'C' Jose Herrera(S) 11", "stats": {"avg": .189, "WAR": 10.4, "OPS": .457, "HR": 0, "Stolen Bases": 0, "OBP": .250, "SO": 34, "RBI": 5
             }},
-                {"name": "Carson Kelly 18", "stats": {"avg": .211, "WAR": 3.8, "OPS": .617, "HR": 7, "Stolen Bases": 2, "OBP": .282, "SO": 71, "RBI": 35
+                {"name": "'C' Carson Kelly(R) 18", "stats": {"avg": .211, "WAR": 3.8, "OPS": .617, "HR": 7, "Stolen Bases": 2, "OBP": .282, "SO": 71, "RBI": 35
             }}, 
-                {"name": "Gabriel Moreno 14", "stats": {"avg": .319, "WAR": 3.8, "OPS": .733, "HR": 2, "Stolen Bases": 0, "OBP": .356, "SO": 8, "RBI": 7
+                {"name": "'UTL' Gabriel Moreno(R) 14", "stats": {"avg": .319, "WAR": 3.8, "OPS": .733, "HR": 2, "Stolen Bases": 0, "OBP": .356, "SO": 8, "RBI": 7
             }}, 
-                {"name": "Nick Ahmed 13", "stats": {"avg": .231, "WAR": 3.8, "OPS": .702, "HR": 3, "Stolen Bases": 0, "OBP": .259, "SO": 15, "RBI": 7
+                {"name": "'SS' Nick Ahmed(R) 13", "stats": {"avg": .231, "WAR": 3.8, "OPS": .702, "HR": 3, "Stolen Bases": 0, "OBP": .259, "SO": 15, "RBI": 7
             }},
-                {"name": "Blaze Alexander 62", "stats": {"avg": .250, "WAR": 10.4, "OPS": .958, "HR": 1, "Stolen Bases": 2, "OBP": .333, "SO": 2, "RBI": 1
+                {"name": "'SS' Blaze Alexander(R) 62", "stats": {"avg": .250, "WAR": 10.4, "OPS": .958, "HR": 1, "Stolen Bases": 2, "OBP": .333, "SO": 2, "RBI": 1
             }},
-                {"name": "Seth Beer 28", "stats": {"avg": .189, "WAR": 3.8, "OPS": .521, "HR": 1, "Stolen Bases": 0, "OBP": .278, "SO": 31, "RBI": 9
+                {"name": "'DH' Seth Beer(L) 28", "stats": {"avg": .189, "WAR": 3.8, "OPS": .521, "HR": 1, "Stolen Bases": 0, "OBP": .278, "SO": 31, "RBI": 9
             }}, 
-                {"name": "Diego Castillo 64", "stats": {"avg": .206, "WAR": 3.8, "OPS": .633, "HR": 12, "Stolen Bases": 1, "OBP": .251, "SO": 75, "RBI": 29
+                {"name": "'SS' Diego Castillo(R) 64", "stats": {"avg": .206, "WAR": 3.8, "OPS": .633, "HR": 12, "Stolen Bases": 1, "OBP": .251, "SO": 75, "RBI": 29
             }}, 
-                {"name": "Evan Longoria 3", "stats": {"avg": .244, "WAR": 3.8, "OPS": .767, "HR": 14, "Stolen Bases": 0, "OBP": .315, "SO": 83, "RBI": 42
+                {"name": "'3B' Evan Longoria(R) 3", "stats": {"avg": .244, "WAR": 3.8, "OPS": .767, "HR": 14, "Stolen Bases": 0, "OBP": .315, "SO": 83, "RBI": 42
             }},
-                {"name": "Ketel Marte 4", "stats": {"avg": .240, "WAR": 10.4, "OPS": .727, "HR": 12, "Stolen Bases": 5, "OBP": .321, "SO": 101, "RBI": 52
+                {"name": "'2B' Ketel Marte(S) 4", "stats": {"avg": .240, "WAR": 10.4, "OPS": .727, "HR": 12, "Stolen Bases": 5, "OBP": .321, "SO": 101, "RBI": 52
             }},
-                {"name": "Geraldo Perdomo 2", "stats": {"avg": .195, "WAR": 3.8, "OPS": .777, "HR": 5, "Stolen Bases": 9, "OBP": .285, "SO": 103, "RBI": 40
+                {"name": "'SS' Geraldo Perdomo(S) 2", "stats": {"avg": .195, "WAR": 3.8, "OPS": .777, "HR": 5, "Stolen Bases": 9, "OBP": .285, "SO": 103, "RBI": 40
             }}, 
-                {"name": "Emmanuel Rivera 15", "stats": {"avg": .227, "WAR": 3.8, "OPS": .728, "HR": 6, "Stolen Bases": 1, "OBP": .304, "SO": 37, "RBI": 41
+                {"name": "'3B' Emmanuel Rivera(R) 15", "stats": {"avg": .227, "WAR": 3.8, "OPS": .728, "HR": 6, "Stolen Bases": 1, "OBP": .304, "SO": 37, "RBI": 41
             }}, 
-                {"name": "Josh Rojas 10", "stats": {"avg": .269, "WAR": 3.8, "OPS": .739, "HR": 9, "Stolen Bases": 23, "OBP": .349, "SO": 98, "RBI": 56
+                {"name": "'3B' Josh Rojas(L) 10", "stats": {"avg": .269, "WAR": 3.8, "OPS": .739, "HR": 9, "Stolen Bases": 23, "OBP": .349, "SO": 98, "RBI": 56
             }},
-                {"name": "Christian Walker 53", "stats": {"avg": .242, "WAR": 10.4, "OPS": .804, "HR": 12, "Stolen Bases": 2, "OBP": .327, "SO": 131, "RBI": 74
+                {"name": "'1B' Christian Walker(R) 53", "stats": {"avg": .242, "WAR": 10.4, "OPS": .804, "HR": 12, "Stolen Bases": 2, "OBP": .327, "SO": 131, "RBI": 74
             }},
-                {"name": "!!Jorge Barrosa 81", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'CF' !-!Jorge Barrosa(R) 81", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Corbin Carroll 7", "stats": {"avg": .260, "WAR": 3.8, "OPS": .830, "HR": 4, "Stolen Bases": 2, "OBP": .330, "SO": 31, "RBI": 14
+                {"name": "'LF' Corbin Carroll(L) 7", "stats": {"avg": .260, "WAR": 3.8, "OPS": .830, "HR": 4, "Stolen Bases": 2, "OBP": .330, "SO": 31, "RBI": 14
             }}, 
-                {"name": "!!!Dominic Fletcher 79", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'CF' !!-!Dominic Fletcher(L) 79", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Lourdes Gurriel Jr. 12", "stats": {"avg": .291, "WAR": 3.8, "OPS": .743, "HR": 5, "Stolen Bases": 3, "OBP": .343, "SO": 83, "RBI": 52
+                {"name": "'LF' Lourdes Gurriel Jr.(R) 12", "stats": {"avg": .291, "WAR": 3.8, "OPS": .743, "HR": 5, "Stolen Bases": 3, "OBP": .343, "SO": 83, "RBI": 52
             }}, 
-                {"name": "Kyle Lewis 1", "stats": {"avg": .143, "WAR": 3.8, "OPS": .529, "HR": 3, "Stolen Bases": 0, "OBP": .226, "SO": 19, "RBI":5
+                {"name": "'CF' Kyle Lewis(R) 1", "stats": {"avg": .143, "WAR": 3.8, "OPS": .529, "HR": 3, "Stolen Bases": 0, "OBP": .226, "SO": 19, "RBI":5
             }}, 
-                {"name": "Jake McCarthy 31", "stats": {"avg": .283, "WAR": 3.8, "OPS": .769, "HR": 8, "Stolen Bases": 23, "OBP": .342, "SO": 76, "RBI": 43
+                {"name": "'OF' Jake McCarthy(L) 31", "stats": {"avg": .283, "WAR": 3.8, "OPS": .769, "HR": 8, "Stolen Bases": 23, "OBP": .342, "SO": 76, "RBI": 43
             }},
-                {"name": "Pavin Smith 26", "stats": {"avg": .220, "WAR": 3.8, "OPS": .667, "HR": 9, "Stolen Bases": 1, "OBP": .300, "SO": 67, "RBI": 33
+                {"name": "'RF' Pavin Smith(L) 26", "stats": {"avg": .220, "WAR": 3.8, "OPS": .667, "HR": 9, "Stolen Bases": 1, "OBP": .300, "SO": 67, "RBI": 33
             }}, 
-                {"name": "Alek Thomas 5", "stats": {"avg": .231, "WAR": 3.8, "OPS": .619, "HR": 8, "Stolen Bases": 4, "OBP": .275, "SO": 74, "RBI": 39
+                {"name": "'CF' Alek Thomas(L) 5", "stats": {"avg": .231, "WAR": 3.8, "OPS": .619, "HR": 8, "Stolen Bases": 4, "OBP": .275, "SO": 74, "RBI": 39
             }}]
         },
         "Atlanta Braves": {
             "name": "Atlanta Braves",
             "players": [
-            {"name": "Travis d'Arnaud 16", "stats": {"avg": .268, "WAR": 10.4, "OPS": .791, "HR": 18, "Stolen Bases": 0, "OBP": .319, "SO": 90, "RBI": 60 
+            {"name": "'C' Travis d'Arnaud(R) 16", "stats": {"avg": .268, "WAR": 10.4, "OPS": .791, "HR": 18, "Stolen Bases": 0, "OBP": .319, "SO": 90, "RBI": 60 
             }},
-                {"name": "!!!!Sean Murphy 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C'  Sean Murphy(R) 12", "stats": {"avg": .250, "WAR": 3.8, "OPS": .759, "HR": 18, "Stolen Bases": 1, "OBP": .332, "SO": 124, "RBI": 66
             }}, 
-                {"name": "Chadwick Tromp 60", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Chadwick Tromp(R) 60", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ozzie Albies 1", "stats": {"avg": .247, "WAR": 3.8, "OPS": .703, "HR": 8, "Stolen Bases": 3, "OBP": .294, "SO": 47, "RBI": 35
+                {"name": "'2B' Ozzie Albies(S) 1", "stats": {"avg": .247, "WAR": 3.8, "OPS": .703, "HR": 8, "Stolen Bases": 3, "OBP": .294, "SO": 47, "RBI": 35
             }},
-                {"name": "!!!Orlando Arcia 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'2B' Orlando Arcia(R) 11", "stats": {"avg": .241, "WAR": 10.4, "OPS": .707, "HR": 10, "Stolen Bases": 3, "OBP": .309, "SO": 68, "RBI": 39
             }},
-                {"name": "Vaughn Grissom 18", "stats": {"avg": .291, "WAR": 3.8, "OPS": .792, "HR": 5, "Stolen Bases": 5, "OBP": .353, "SO": 34, "RBI": 18
+                {"name": "'2B' Vaughn Grissom(R) 18", "stats": {"avg": .291, "WAR": 3.8, "OPS": .792, "HR": 5, "Stolen Bases": 5, "OBP": .353, "SO": 34, "RBI": 18
             }}, 
-                {"name": "Matt Olson 28", "stats": {"avg": .240, "WAR": 3.8, "OPS": .802, "HR": 34, "Stolen Bases": 0, "OBP": .325, "SO": 170, "RBI": 103
+                {"name": "'1B' Matt Olson(L) 28", "stats": {"avg": .240, "WAR": 3.8, "OPS": .802, "HR": 34, "Stolen Bases": 0, "OBP": .325, "SO": 170, "RBI": 103
             }}, 
-                {"name": "Austin Riley 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .878, "HR": 38, "Stolen Bases": 2, "OBP": .349, "SO": 168, "RBI": 93
+                {"name": "'3B' Austin Riley(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .878, "HR": 38, "Stolen Bases": 2, "OBP": .349, "SO": 168, "RBI": 93
             }},
-                {"name": "!!!Braden Shewmake", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'SS' !!-!Braden Shewmake(L) ", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ronald Acuña Jr. 13", "stats": {"avg": .266, "WAR": 3.8, "OPS": .764, "HR": 15, "Stolen Bases": 29, "OBP": .351, "SO": 126, "RBI": 50
+                {"name": "'RF' Ronald Acuña Jr.(R) 13", "stats": {"avg": .266, "WAR": 3.8, "OPS": .764, "HR": 15, "Stolen Bases": 29, "OBP": .351, "SO": 126, "RBI": 50
             }}, 
-                {"name": "Michael Harris II 23", "stats": {"avg": .297, "WAR": 3.8, "OPS": .853, "HR": 19, "Stolen Bases": 20, "OBP": .339, "SO": 107, "RBI": 64
+                {"name": "'CF' Michael Harris(L) 23", "stats": {"avg": .297, "WAR": 3.8, "OPS": .853, "HR": 19, "Stolen Bases": 20, "OBP": .339, "SO": 107, "RBI": 64
             }}, 
-                {"name": "!!!Sam Hilliard 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'OF' Sam Hilliard(L) 22", "stats": {"avg": .214, "WAR": 3.8, "OPS": .669, "HR": 11, "Stolen Bases": 7, "OBP": .290, "SO": 94, "RBI": 34
             }},
-                {"name": "!!!Jordan Luplow 24", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'OF' Jordan Luplow(R) 24", "stats": {"avg": .207, "WAR": 10.4, "OPS": .686, "HR": 13, "Stolen Bases": 5, "OBP": .300, "SO": 83, "RBI": 39
             }},
-                {"name": "Eddie Rosario 8", "stats": {"avg": .212, "WAR": 3.8, "OPS": .587, "HR": 5, "Stolen Bases": 3, "OBP": .259, "SO": 68, "RBI": 25
+                {"name": "'LF' Eddie Rosario(L) 8", "stats": {"avg": .212, "WAR": 3.8, "OPS": .587, "HR": 5, "Stolen Bases": 3, "OBP": .259, "SO": 68, "RBI": 25
             }}, 
-                {"name": "!!!Eli White 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'OF' Eli White(R) 38", "stats": {"avg": .209, "WAR": 3.8, "OPS": .617, "HR": 7, "Stolen Bases": 10, "OBP": .281, "SO": 77, "RBI": 25
             }}, 
-                {"name": "Marcell Ozuna 20", "stats": {"avg": .226, "WAR": 3.8, "OPS": .687, "HR": 23, "Stolen Bases": 2, "OBP": .274, "SO": 122, "RBI": 56
+                {"name": "'DH' Marcell Ozuna(R) 20", "stats": {"avg": .226, "WAR": 3.8, "OPS": .687, "HR": 23, "Stolen Bases": 2, "OBP": .274, "SO": 122, "RBI": 56
             }}]
         },
         "Baltimore Orioles": {
             "name": "Baltimore Orioles",
             "players": [
-            {"name": "!!!James McCann", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "!!!James McCann(R) ", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Adley Rutschman 35", "stats": {"avg": .254, "WAR": 3.8, "OPS": .806, "HR": 13, "Stolen Bases": 2, "OBP": .362, "SO": 86, "RBI": 42
+                {"name": "Adley Rutschman(S) 35", "stats": {"avg": .254, "WAR": 3.8, "OPS": .806, "HR": 13, "Stolen Bases": 2, "OBP": .362, "SO": 86, "RBI": 42
             }}, 
-                {"name": "!!Adam Frazier", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 4, "Stolen Bases": 1, "OBP": .546, "SO": 78, "RBI": 18
+                {"name": "!!Adam Frazier(L)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 4, "Stolen Bases": 1, "OBP": .546, "SO": 78, "RBI": 18
             }}, 
-                {"name": "Gunnar Henderson 2", "stats": {"avg": .259, "WAR": 3.8, "OPS": .788, "HR": 4, "Stolen Bases": 1, "OBP": .348, "SO": 34, "RBI": 18
+                {"name": "Gunnar Henderson(L) 2", "stats": {"avg": .259, "WAR": 3.8, "OPS": .788, "HR": 4, "Stolen Bases": 1, "OBP": .348, "SO": 34, "RBI": 18
             }},
-                {"name": "Jorge Mateo 3", "stats": {"avg": .221, "WAR": 10.4, "OPS": .646, "HR": 13, "Stolen Bases": 35, "OBP": .267, "SO": 147, "RBI": 50
+                {"name": "Jorge Mateo(R) 3", "stats": {"avg": .221, "WAR": 10.4, "OPS": .646, "HR": 13, "Stolen Bases": 35, "OBP": .267, "SO": 147, "RBI": 50
             }},
-                {"name": "Ryan Mountcastle 6", "stats": {"avg": .250, "WAR": 3.8, "OPS": .729, "HR": 22, "Stolen Bases": 4, "OBP": .305, "SO": 154, "RBI": 85
+                {"name": "Ryan Mountcastle(R) 6", "stats": {"avg": .250, "WAR": 3.8, "OPS": .729, "HR": 22, "Stolen Bases": 4, "OBP": .305, "SO": 154, "RBI": 85
             }}, 
-                {"name": "!!Joey Ortiz", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!Joey Ortiz(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ramón Urías 29", "stats": {"avg": .248, "WAR": 3.8, "OPS": .720, "HR": 16, "Stolen Bases": 1, "OBP": .305, "SO": 98, "RBI": 51
+                {"name": "Ramón Urías(R) 29", "stats": {"avg": .248, "WAR": 3.8, "OPS": .720, "HR": 16, "Stolen Bases": 1, "OBP": .305, "SO": 98, "RBI": 51
             }},
-                {"name": "Terrin Vavra 77", "stats": {"avg": .258, "WAR": 10.4, "OPS": .677, "HR": 1, "Stolen Bases": 0, "OBP": .340, "SO": 19, "RBI": 12
+                {"name": "Terrin Vavra(L) 77", "stats": {"avg": .258, "WAR": 10.4, "OPS": .677, "HR": 1, "Stolen Bases": 0, "OBP": .340, "SO": 19, "RBI": 12
             }},
-                {"name": "Austin Hays 21", "stats": {"avg": .250, "WAR": 3.8, "OPS": .719, "HR": 16, "Stolen Bases": 2, "OBP": .306, "SO": 114, "RBI": 60
+                {"name": "Austin Hays(R) 21", "stats": {"avg": .250, "WAR": 3.8, "OPS": .719, "HR": 16, "Stolen Bases": 2, "OBP": .306, "SO": 114, "RBI": 60
             }}, 
-                {"name": "Ryan McKenna 26", "stats": {"avg": .237, "WAR": 3.8, "OPS": .634, "HR": 2, "Stolen Bases": 2, "OBP": .294, "SO": 55, "RBI": 11
+                {"name": "Ryan McKenna(R) 26", "stats": {"avg": .237, "WAR": 3.8, "OPS": .634, "HR": 2, "Stolen Bases": 2, "OBP": .294, "SO": 55, "RBI": 11
             }}, 
-                {"name": "Cedric Mullins 31", "stats": {"avg": .258, "WAR": 3.8, "OPS": .721, "HR": 16, "Stolen Bases": 34, "OBP": .318, "SO": 126, "RBI": 64
+                {"name": "Cedric Mullins(L) 31", "stats": {"avg": .258, "WAR": 3.8, "OPS": .721, "HR": 16, "Stolen Bases": 34, "OBP": .318, "SO": 126, "RBI": 64
             }},
-                {"name": "Anthony Santander 25", "stats": {"avg": .240, "WAR": 10.4, "OPS": .773, "HR": 33, "Stolen Bases": 0, "OBP": .318, "SO": 122, "RBI": 89
+                {"name": "Anthony Santander(S) 25", "stats": {"avg": .240, "WAR": 10.4, "OPS": .773, "HR": 33, "Stolen Bases": 0, "OBP": .318, "SO": 122, "RBI": 89
             }},
-                {"name": "Kyle Stowers 83", "stats": {"avg": .253, "WAR": 3.8, "OPS": .724, "HR": 3, "Stolen Bases": 0, "OBP": .306, "SO": 29, "RBI": 11
+                {"name": "Kyle Stowers(L) 83", "stats": {"avg": .253, "WAR": 3.8, "OPS": .724, "HR": 3, "Stolen Bases": 0, "OBP": .306, "SO": 29, "RBI": 11
             }}]
         },
         "Boston Red Sox": {
             "name": "Boston Red Sox",
             "players": [
-            {"name": "Reese McGuire 3", "stats": {"avg": .337, "WAR": 10.4, "OPS": .877, "HR": 3, "Stolen Bases": 1, "OBP": .377, "SO": 23, "RBI": 12 
+            {"name": "Reese McGuire(L) 3", "stats": {"avg": .337, "WAR": 10.4, "OPS": .877, "HR": 3, "Stolen Bases": 1, "OBP": .377, "SO": 23, "RBI": 12 
             }},
-                {"name": "Connor Wong 12", "stats": {"avg": .188, "WAR": 3.8, "OPS": .585, "HR": 1, "Stolen Bases": 0, "OBP": .273, "SO": 16, "RBI": 7
+                {"name": "Connor Wong(R) 12", "stats": {"avg": .188, "WAR": 3.8, "OPS": .585, "HR": 1, "Stolen Bases": 0, "OBP": .273, "SO": 16, "RBI": 7
             }}, 
-                {"name": "Christian Arroyo 39", "stats": {"avg": .286, "WAR": 3.8, "OPS": .736, "HR": 6, "Stolen Bases": 5, "OBP": .322, "SO": 498, "RBI": 36
+                {"name": "Christian Arroyo(R) 39", "stats": {"avg": .286, "WAR": 3.8, "OPS": .736, "HR": 6, "Stolen Bases": 5, "OBP": .322, "SO": 498, "RBI": 36
             }}, 
-                {"name": "Triston Casas 36", "stats": {"avg": .197, "WAR": 3.8, "OPS": .766, "HR": 5, "Stolen Bases": 1, "OBP": .358, "SO": 23, "RBI": 12
+                {"name": "Triston Casas(L) 36", "stats": {"avg": .197, "WAR": 3.8, "OPS": .766, "HR": 5, "Stolen Bases": 1, "OBP": .358, "SO": 23, "RBI": 12
             }},
-                {"name": "Bobby Dalbec 29", "stats": {"avg": .215, "WAR": 10.4, "OPS": .652, "HR": 12, "Stolen Bases": 3, "OBP": .283, "SO": 118, "RBI": 39
+                {"name": "Bobby Dalbec(R) 29", "stats": {"avg": .215, "WAR": 10.4, "OPS": .652, "HR": 12, "Stolen Bases": 3, "OBP": .283, "SO": 118, "RBI": 39
             }},
-                {"name": "Rafael Devers 11", "stats": {"avg": .295, "WAR": 3.8, "OPS": .879, "HR": 27, "Stolen Bases": 3, "OBP": .358, "SO": 114, "RBI": 88
+                {"name": "Rafael Devers(L) 11", "stats": {"avg": .295, "WAR": 3.8, "OPS": .879, "HR": 27, "Stolen Bases": 3, "OBP": .358, "SO": 114, "RBI": 88
             }}, 
-                {"name": "!!!David Hamilton", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!David Hamilton(L)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "!!!Adalberto Mondesi 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Adalberto Mondesi(S) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "!!!Ceddanne Rafaela", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Ceddanne Rafaela(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Trevor Story 10", "stats": {"avg": .238, "WAR": 3.8, "OPS": .737, "HR": 16, "Stolen Bases": 13, "OBP": .303, "SO": 122, "RBI": 66
+                {"name": "Trevor Story(R) 10", "stats": {"avg": .238, "WAR": 3.8, "OPS": .737, "HR": 16, "Stolen Bases": 13, "OBP": .303, "SO": 122, "RBI": 66
             }}, 
-                {"name": "!!!Justin Turner 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Justin Turner(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "!!!Enmanuel Valdez", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Enmanuel Valdez(L)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "!!!Wilyer Abreu", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Wilyer Abreu(L)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jarren Duran 16", "stats": {"avg": .221, "WAR": 3.8, "OPS": .645, "HR": 3, "Stolen Bases": 7, "OBP": .283, "SO": 63, "RBI": 17
+                {"name": "Jarren Duran(L) 16", "stats": {"avg": .221, "WAR": 3.8, "OPS": .645, "HR": 3, "Stolen Bases": 7, "OBP": .283, "SO": 63, "RBI": 17
             }}, 
-                {"name": "!!!Adam Duvall 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Adam Duvall(R) 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Enrique Hernández 5", "stats": {"avg": .222, "WAR": 3.8, "OPS": .629, "HR": 6, "Stolen Bases": 0, "OBP": .291, "SO": 71, "RBI": 45
+                {"name": "Enrique Hernández(R) 5", "stats": {"avg": .222, "WAR": 3.8, "OPS": .629, "HR": 6, "Stolen Bases": 0, "OBP": .291, "SO": 71, "RBI": 45
             }},
-                {"name": "Rob Refsnyder 30", "stats": {"avg": .307, "WAR": 3.8, "OPS": .881, "HR": 6, "Stolen Bases": 1, "OBP": .384, "SO": 46, "RBI": 21
+                {"name": "Rob Refsnyder(R) 30", "stats": {"avg": .307, "WAR": 3.8, "OPS": .881, "HR": 6, "Stolen Bases": 1, "OBP": .384, "SO": 46, "RBI": 21
             }}, 
-                {"name": "Alex Verdugo 99", "stats": {"avg": .280, "WAR": 3.8, "OPS": .732, "HR": 11, "Stolen Bases": 1, "OBP": .3286, "SO": 86, "RBI": 74
+                {"name": "Alex Verdugo(L) 99", "stats": {"avg": .280, "WAR": 3.8, "OPS": .732, "HR": 11, "Stolen Bases": 1, "OBP": .3286, "SO": 86, "RBI": 74
             }}, 
-                {"name": "!!!Masataka Yoshida 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "!!!Masataka Yoshida(L) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Chicago Cubs": {
             "name": "Chicago Cubs",
             "players": [
-            {"name": "Miguel Amaya 75", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Miguel Amaya(R) 75", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Tucker Barnhart 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tucker Barnhart(S) 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Yan Gomes 15", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yan Gomes(R) 15", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nico Hoerner 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nico Hoerner(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Eric Hosmer 51", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Eric Hosmer(L) 51", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nick Madrigal 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Madrigal(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Miles Mastrobuoni", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Miles Mastrobuoni(L)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Zach McKinstry 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Zach McKinstry(L) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Dansby Swanson 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dansby Swanson(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Patrick Wisdom 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Patrick Wisdom(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kevin Alcantara", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kevin Alcantara(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Cody Bellinger 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cody Bellinger(L) 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Alexander Canario", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alexander Canario(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brennen Davis 94", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brennen Davis(R) 94", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ian Happ 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ian Happ(S) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Christopher Morel 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Christopher Morel(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Seiya Suzuki 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Seiya Suzuki(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nelson Velázquez 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nelson Velázquez(R) 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Trey Mancini", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Trey Mancini(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Chicago White Sox": {
             "name": "Chicago White Sox",
             "players": [
-            {"name": "Yasmani Grandal 24", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Yasmani Grandal(S) 24", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Carlos Pérez 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Carlos Pérez(R) 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Seby Zavala 44", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Seby Zavala(R) 44", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tim Anderson 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tim Anderson(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jake Burger 30", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Burger(R) 30", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Leury Garcia 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Leury Garcia(S) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Romy Gonzalez 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Romy Gonzalez(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Yoán Moncada 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yoán Moncada(S) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Bryan Ramos", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bryan Ramos(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jose Rodriguez", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Rodriguez(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Lenyn Sosa 50", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Lenyn Sosa(R) 50", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Andrew Benintendi 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrew Benintendi(L) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Eloy Jiménez 74", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Eloy Jiménez(R) 74", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Luis Robert Jr. 88", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Robert Jr.(R) 88", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Gavin Sheets 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gavin Sheets(L) 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Andrew Vaughn 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrew Vaughn(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Cincinnati Reds": {
             "name": "Cincinnati Reds",
             "players": [
-            {"name": "Curt Casali 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Curt Casali(R) 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Luke Maile 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luke Maile(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tyler Stephenson 37", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tyler Stephenson(R) 37", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Barrero 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Barrero(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Elly De La Cruz 44", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Elly De La Cruz(S) 44", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jonathan India 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonathan India(R) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Alejo Lopez 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alejo Lopez(S) 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Noelvi Marte 68", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Noelvi Marte(R) 68", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kevin Newman 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kevin Newman(R) 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Spencer Steer 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Spencer Steer(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Joey Votto 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joey Votto(L) 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Stuart Fairchild 57", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Stuart Fairchild(R) 57", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jake Fraley 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Fraley(L) 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "TJ Friedl 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "TJ Friedl(L) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Wil Myers 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Wil Myers(R) 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nick Senzel 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Senzel(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Michael Siani 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Siani(L) 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nick Solak 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Solak(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Cleveland Guardians": {
             "name": "Cleveland Guardians",
             "players": [
-            {"name": "Bryan Lavastida 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "'C' Bryan Lavastida(R) 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Bo Naylor 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Bo Naylor(L) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mike Zunino 10", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Mike Zunino(R) 10", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Gabriel Arias 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gabriel Arias(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Josh Bell 55", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Bell(S) 55", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Juan Brito", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Juan Brito(S)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tyler Freeman 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tyler Freeman(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Andrés Giménez 0", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrés Giménez(L) 0", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Angel Martinez", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Angel Martinez(S)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Josh Naylor 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Naylor(L) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "José Ramírez 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "José Ramírez(S) 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jhonkensy Noel 78", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jhonkensy Noel(R) 78", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brayan Rocchio 66", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brayan Rocchio(S) 66", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Amed Rosario 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Amed Rosario(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Tena 75", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Tena(L) 75", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Will Benson 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Will Benson(L) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Will Brennan 63", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Will Brennan(L) 63", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Oscar Gonzalez 39", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Oscar Gonzalez(R) 39", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Steven Kwan 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Steven Kwan(L) 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Richie Palacios 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Richie Palacios(L) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Myles Straw 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Myles Straw(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "George Valera 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "George Valera(L) 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Colorado Rockies": {
             "name": "Colorado Rockies",
             "players": [
-            {"name": "Elias Díaz 35", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "'C' Elias Díaz(R) 35", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Brian Serven 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Brian Serven(R) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Warming Bernabel", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Warming Bernabel(R)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Julio Carreras", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Julio Carreras(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "C.J. Cron 25", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "C.J. Cron(R) 25", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nolan Jones 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nolan Jones(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ryan McMahon 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ryan McMahon(L) 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Elehuris Montero 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Elehuris Montero(R) 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brendan Rodgers 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brendan Rodgers(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Michael Toglia 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Toglia(R) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ezequiel Tovar 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ezequiel Tovar(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Alan Trejo 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alan Trejo(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Charlie Blackmon 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Charlie Blackmon(L) 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Sean Bouchard 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Sean Bouchard(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kris Bryant 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kris Bryant(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Yonathan Daza 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yonathan Daza(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brenton Doyle", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brenton Doyle(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Randal Grichuk 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Randal Grichuk(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            }},
+                {"name": "Nolan Jones (L) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            }}, 
+                {"name": "Michael Toglia(S) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Detroit Tigers": {
             "name": "Detroit Tigers",
             "players": [
-            {"name": "Eric Haase 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "'C' Eric Haase(R) 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Jake Rogers 34", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Jake Rogers(R) 34", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Donny Sands", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Donny Sands(R)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Javier Báez 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Javier Báez(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ryan Kreidler 32", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ryan Kreidler(R) 32", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Andre Lipcius", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andre Lipcius(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tyler Nevin", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tyler Nevin(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Wenceel Perez 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Wenceel Perez(S) 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jonathan Schoop 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonathan Schoop(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Zack Short 59", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Zack Short(R) 59", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Spencer Torkelson 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Spencer Torkelson(R) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Akil Baddoo 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Akil Baddoo(L) 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Riley Greene 31", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Riley Greene(L) 31", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nick Maton 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Maton(L) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Parker Meadows", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Parker Meadows(L)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Austin Meadows 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Austin Meadows(L) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Matt Vierling", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Matt Vierling(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Miguel Cabrera 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Miguel Cabrera(R) 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kerry Carpenter 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kerry Carpenter(L) 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Houston Astros": {
             "name": "Houston Astros",
             "players": [
-            {"name": "Yainer Diaz 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "'C' Yainer Diaz(R) 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Korey Lee 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Korey Lee(R) 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "José Abreu 79", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "José Abreu(R) 79", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Altuve 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Altuve(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Rylan Bannon", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Rylan Bannon(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Alex Bregman 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alex Bregman(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "J.J. Matijevic 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "J.J. Matijevic(L) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jeremy Peña 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jeremy Peña(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Joe Perez 31", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joe Perez(R) 31", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mauricio Dubón 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mauricio Dubón(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Bligh Madris", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bligh Madris(L)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Chas McCormick 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Chas McCormick(R) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jake Meyers 69", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Meyers(R) 69", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kyle Tucker 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kyle Tucker(L) 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Yordan Alvarez 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yordan Alvarez(L) 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Michael Brantley 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Brantley(L) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "	David Hensley 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "	David Hensley(R) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            }}, 
+                {"name": "'C' Martín Maldonado (R) 15", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Kansas City Royals": {
             "name": "Kansas City Royals",
             "players": [
-            {"name": "Freddy Fermin 38", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "'C' Freddy Fermin(R) 38", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "MJ Melendez 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' MJ Melendez(L) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Salvador Perez 13", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Salvador Perez(R) 13", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Hunter Dozier 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Hunter Dozier(R) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nate Eaton 18", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nate Eaton(R) 18", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Maikel Garcia 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Maikel Garcia(R) 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nicky Lopez 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nicky Lopez(L) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Michael Massey 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Massey(L) 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nick Pratto 32", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Pratto(L) 32", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Samad Taylor 0", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Samad Taylor(R) 0", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Bobby Witt Jr. 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bobby Witt Jr.(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Diego Hernandez 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Diego Hernandez(L) 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kyle Isbel 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kyle Isbel(L) 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Edward Olivares 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Edward Olivares(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Drew Waters 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Drew Waters(S) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Vinnie Pasquantino 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Vinnie Pasquantino(L) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Los Angeles Angels": {
             "name": "Los Angeles Angels",
             "players": [
-            {"name": "Shohei Ohtani 17", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "'DH' Shohei Ohtani(L) 17", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Logan O'Hoppe 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Logan O'Hoppe(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Max Stassi 33", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Max Stassi(R) 33", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Matt Thaiss 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "'C' Matt Thaiss(L) 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brandon Drury 23", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Drury(R) 23", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "David Fletcher 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "David Fletcher(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Anthony Rendon 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Anthony Rendon(R) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis Rengifo 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Rengifo(S) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Andrew Velazquez 4", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrew Velazquez(S) 4", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jo Adell 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jo Adell(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Gio Urshela 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gio Urshela(R) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jared Walsh 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jared Walsh(L) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brett Phillips 8", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brett Phillips(L) 8", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mickey Moniak 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mickey Moniak(L) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Hunter Renfroe 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Hunter Renfroe(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mike Trout 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mike Trout(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Taylor Ward 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Taylor Ward(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            }},
+                {"name": "Livan Soto(L) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Los Angeles Dodgers": {
             "name": "Los Angeles Dodgers",
             "players": [
-            {"name": "Austin Barnes 15", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Austin Barnes(R) 15", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Diego Cartaya", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Diego Cartaya(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Will Smith 16", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Will Smith(R) 16", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Michael Busch", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Busch(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Freddie Freeman 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Freddie Freeman(R) 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Yonny Hernandez 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yonny Hernandez(R) 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Eddys Leonard 83", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Eddys Leonard(R) 83", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Gavin Lux 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gavin Lux(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Max Muncy 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Max Muncy(R) 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Miguel Rojas 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Miguel Rojas(R) 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Miguel Vargas 71", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Miguel Vargas(R) 71", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jorbit Vivas 80", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jorbit Vivas(R) 80", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mookie Betts 50", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mookie Betts(R) 50", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jonny DeLuca", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonny DeLuca(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "James Outman 77", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "James Outman(R) 77", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Andy Pages", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andy Pages(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Chris Taylor 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Chris Taylor(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Trayce Thompson 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Trayce Thompson(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "J.D. Martinez 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "J.D. Martinez(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Miami Marlins": {
             "name": "Miami Marlins",
             "players": [
-            {"name": "Nick Fortes 4", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Nick Fortes(R) 4", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jacob Stallings 58", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jacob Stallings(R) 58", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jacob Amaya", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jacob Amaya(R)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis Arraez 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Arraez(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jon Berti 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jon Berti(R) 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jazz Chisholm Jr. 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jazz Chisholm Jr.(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Garrett Cooper 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Garrett Cooper(R) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Xavier Edwards", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Xavier Edwards(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jordan Groshans 10", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jordan Groshans(R) 10", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jean Segura 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jean Segura(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Joey Wendle 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joey Wendle(R) 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "JJ Bleday 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "JJ Bleday(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Peyton Burdick 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Peyton Burdick(R) 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Bryan De La Cruz 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bryan De La Cruz(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jerar Encarnacion 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jerar Encarnacion(R) 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Avisaíl García 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Avisaíl García(R) 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jesús Sánchez 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jesús Sánchez(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jorge Soler 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jorge Soler(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Milwaukee Brewers": {
             "name": "Milwaukee Brewers",
             "players": [
-            {"name": "Victor Caratini 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Victor Caratini(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "William Contreras 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "William Contreras(R) 24", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Payton Henry 25", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Payton Henry(R) 25", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Willy Adames 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Willy Adames(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brian Anderson 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brian Anderson(R) 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mike Brosseau 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mike Brosseau(R) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Keston Hiura 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Keston Hiura(R) 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Owen Miller 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Owen Miller(R) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Rowdy Tellez 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Rowdy Tellez(R) 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Abraham Toro 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Abraham Toro(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brice Turang 72", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brice Turang(R) 72", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis Urías 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Urías(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Garrett Mitchell 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Garrett Mitchell(R) 5", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Blake Perkins 67", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Blake Perkins(R) 67", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tyrone Taylor 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tyrone Taylor(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jesse Winker 33", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jesse Winker(R) 33", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Christian Yelich 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Christian Yelich(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Minnesota Twins": {
             "name": "Minnesota Twins",
             "players": [
-            {"name": "Ryan Jeffers 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Ryan Jeffers(R) 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Christian Vázquez 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Christian Vázquez(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Carlos Correa 4", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Carlos Correa(R) 4", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kyle Farmer 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kyle Farmer(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Edouard Julien", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Edouard Julien(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Royce Lewis 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Royce Lewis(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Miranda 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Miranda(R) 64", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jorge Polanco 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jorge Polanco(R) 11", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Gilberto Celestino 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gilberto Celestino(R) 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Joey Gallo 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joey Gallo(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nick Gordon 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Gordon(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Max Kepler 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Max Kepler(R) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Alex Kirilloff 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alex Kirilloff(R) 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Trevor Larnach 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Trevor Larnach(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Michael A. Taylor", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael A. Taylor(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Matt Wallner 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Matt Wallner(R) 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "New York Mets": {
             "name": "New York Mets",
             "players": [
-            {"name": "Francisco Álvarez 50", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Francisco Álvarez(R) 50", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Omar Narváez 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Omar Narváez(L) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tomás Nido 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tomás Nido(R) 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Pete Alonso 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Pete Alonso(R) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brett Baty 22", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brett Baty(L) 22", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Eduardo Escobar 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Eduardo Escobar(S) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis Guillorme 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Guillorme(L) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Francisco Lindor 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Francisco Lindor(S) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ronny Mauricio 60", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ronny Mauricio(S) 60", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jeff McNeil 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jeff McNeil(L) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Danny Mendick 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Danny Mendick(R) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mark Vientos 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mark Vientos(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mark Canha 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mark Canha(R) 19", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Khalil Lee 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Khalil Lee(L) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Starling Marte 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Starling Marte(R) 6", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brandon Nimmo 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Nimmo(L) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Darin Ruf 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Darin Ruf(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Daniel Vogelbach 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Daniel Vogelbach(L) 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "New York Yankees": {
             "name": "New York Yankees",
             "players": [
-                {"name": "Aaron Judge 99", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Aaron Judge(R) 99", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kyle Higashioka 66", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kyle Higashioka(R) 66", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Trevino 39", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Trevino(R) 39", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Oswaldo Cabrera 95", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Oswaldo Cabrera(R) 95", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Josh Donaldson 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Donaldson(R) 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Isiah Kiner-Falefa 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Isiah Kiner-Falefa(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "DJ LeMahieu 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "DJ LeMahieu(R) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Oswald Peraza 91", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Oswald Peraza(R) 91", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ben Rortvedt 38", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ben Rortvedt(R) 38", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Anthony Rizzo 48", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Anthony Rizzo(R) 48", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Gleyber Torres 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Gleyber Torres(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Harrison Bader 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Harrison Bader(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Estevan Florial 90", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Estevan Florial(R) 90", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Aaron Hicks 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Aaron Hicks(R) 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Everson Pereira 93", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Everson Pereira(R) 93", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Giancarlo Stanton 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Giancarlo Stanton(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Oakland Athletics": {
             "name": "Oakland Athletics",
             "players": [
-            {"name": "Manny Piña 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Manny Piña(R) 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Nick Allen 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Allen(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jonah Bride 77", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonah Bride(R) 77", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Seth Brown 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Seth Brown(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jordan Diaz 75", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jordan Diaz(R) 75", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Dermis Garcia 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dermis Garcia(R) 76", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tony Kemp 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tony Kemp(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ryan Noda 98", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ryan Noda(R) 98", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jace Peterson 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jace Peterson(R) 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kevin Smith 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kevin Smith(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Lawrence Butler", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Lawrence Butler(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Conner Capel 72", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Conner Capel(R) 72", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Aledmys Díaz 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Aledmys Díaz(R) 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ramón Laureano 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ramón Laureano(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Cristian Pache 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cristian Pache(R) 20", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brent Rooker 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brent Rooker(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Esteury Ruiz 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Esteury Ruiz(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Cal Stevenson 37", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cal Stevenson(R) 37", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Shea Langeliers 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Shea Langeliers(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Philadelphia Phillies": {
             "name": "Philadelphia Phillies",
             "players": [
-            {"name": "Rafael Marchan 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Rafael Marchan(R) 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "J.T. Realmuto 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "J.T. Realmuto(R) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Garrett Stubbs 21", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Garrett Stubbs(R) 21", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Alec Bohm 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alec Bohm(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Darick Hall 24", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Darick Hall(R) 24", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Rhys Hoskins 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Rhys Hoskins(R) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Edmundo Sosa 33", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Edmundo Sosa(R) 33", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Bryson Stott 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bryson Stott(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Trea Turner 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Trea Turner(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nick Castellanos 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nick Castellanos(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jake Cave 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Cave(R) 60", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brandon Marsh 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Marsh(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Símon Muzziotti 40", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Símon Muzziotti(R) 40", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jhailyn Ortiz 89", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jhailyn Ortiz(R) 89", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Johan Rojas", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Johan Rojas(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kyle Schwarber 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kyle Schwarber(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Bryce Harper 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bryce Harper(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Pittsburgh Pirates": {
             "name": "Pittsburgh Pirates",
             "players": [
-            {"name": "Austin Hedges 18", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Austin Hedges(R) 18", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Endy Rodriguez 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Endy Rodriguez(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ji Hwan Bae 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ji Hwan Bae(R) 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Rodolfo Castro 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Rodolfo Castro(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ji-Man Choi 91", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ji-Man Choi(R) 91", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Oneil Cruz 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Oneil Cruz(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ke'Bryan Hayes 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ke'Bryan Hayes(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tucupita Marcano 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tucupita Marcano(R) 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Liover Peguero 60", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Liover Peguero(R) 60", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Carlos Santana 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Carlos Santana(R) 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jared Triolo 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jared Triolo(R) 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Connor Joe 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Connor Joe(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Andrew McCutchen 22", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrew McCutchen(R) 22", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Cal Mitchell 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cal Mitchell(R) 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Bryan Reynolds 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bryan Reynolds(R) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Canaan Smith-Njigba 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Canaan Smith-Njigba(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jack Suwinski 65", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jack Suwinski(R) 65", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Travis Swaggerty 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Travis Swaggerty(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ryan Vilade 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ryan Vilade(R) 38", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "San Diego Padres": {
             "name": "San Diego Padres",
             "players": [
-            {"name": "Luis Campusano 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Luis Campusano(R) 12", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Austin Nola 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Austin Nola(R) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brett Sullivan 24", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brett Sullivan(R) 24", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Matthew Batten 37", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Matthew Batten(R) 37", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Xander Bogaerts 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Xander Bogaerts(R) 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Matt Carpenter 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Matt Carpenter(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jake Cronenworth 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Cronenworth(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brandon Dixon 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Dixon(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Ha-Seong Kim 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ha-Seong Kim(R) 7", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Manny Machado 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Manny Machado(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "José Azocar 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "José Azocar(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Adam Engel 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Adam Engel(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Trent Grisham 1", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Trent Grisham(R) 1", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Juan Soto 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Juan Soto(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nelson Cruz 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nelson Cruz(R) 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "San Francisco Giants": {
             "name": "San Francisco Giants",
             "players": [
-            {"name": "Joey Bart 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Joey Bart(R) 21", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brandon Crawford 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Crawford(R) 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "J.D. Davis 7", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "J.D. Davis(R) 7", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Isan Díaz 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Isan Díaz(R) 1", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Thairo Estrada 39", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Thairo Estrada(R) 39", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Wilmer Flores 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Wilmer Flores(R) 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Marco Luciano", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Marco Luciano(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "David Villar 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "David Villar(R) 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brett Wisely", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brett Wisely(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Michael Conforto 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Michael Conforto(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis González 51", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis González(R) 51", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mitch Haniger 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mitch Haniger(R) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Luis Matos", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis Matos(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Joc Pederson 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joc Pederson(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Heliot Ramos 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Heliot Ramos(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Blake Sabol", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Blake Sabol(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Austin Slater 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Austin Slater(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "LaMonte Wade Jr. 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "LaMonte Wade Jr.(R) 31", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mike Yastrzemski 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mike Yastrzemski(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Seattle Mariners": {
             "name": "Seattle Mariners",
             "players": [
-            {"name": "Tom Murphy 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Tom Murphy(R) 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Cal Raleigh 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cal Raleigh(R) 29", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "J.P. Crawford 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "J.P. Crawford(R) 3", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ty France 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ty France(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Eugenio Suárez 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Eugenio Suárez(R) 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Evan White 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Evan White(R) 12", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Kolten Wong 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kolten Wong(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jonatan Clase", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonatan Clase(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Sam Haggerty 0", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Sam Haggerty(R) 0", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Teoscar Hernández 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Teoscar Hernández(R) 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Cooper Hummel 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cooper Hummel(R) 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jarred Kelenic 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jarred Kelenic(R) 10", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Cade Marlowe", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cade Marlowe(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Dylan Moore 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dylan Moore(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "AJ Pollock 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "AJ Pollock(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Julio Rodríguez 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Julio Rodríguez(R) 44", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Taylor Trammell 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Taylor Trammell(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tommy La Stella", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tommy La Stella(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "St. Louis Cardinals": {
             "name": "St. Louis Cardinals",
             "players": [
-            {"name": "Willson Contreras 40", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Willson Contreras(R) 40", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Iván Herrera 47", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Iván Herrera(R) 47", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Andrew Knizner 7", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Andrew Knizner(R) 7", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nolan Arenado 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nolan Arenado(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Paul DeJong 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Paul DeJong(R) 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brendan Donovan 33", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brendan Donovan(R) 33", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tommy Edman 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tommy Edman(R) 19", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Fermin 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Fermin(R) 35", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Paul Goldschmidt 46", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Paul Goldschmidt(R) 46", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nolan Gorman 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nolan Gorman(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Alec Burleson 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alec Burleson(R) 41", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Dylan Carlson 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dylan Carlson(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Moisés Gómez 36", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Moisés Gómez(R) 36", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Lars Nootbaar 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Lars Nootbaar(R) 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Tyler O'Neill 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Tyler O'Neill(R) 27", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "	Juan Yepez 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
-            }},
-                {"name": "Darin Ruf 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
-            }}, 
-                {"name": "Daniel Vogelbach 32", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Juan Yepez(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Tampa Bay Rays": {
             "name": "Tampa Bay Rays",
             "players": [
-            {"name": "Christian Bethancourt 14", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Christian Bethancourt(R) 14", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Francisco Mejía 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Francisco Mejía(R) 21", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "René Pinto 50", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "René Pinto(R) 50", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jonathan Aranda 62", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonathan Aranda(R) 62", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Osleivis Basabe", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Osleivis Basabe(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Vidal Bruján 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Vidal Bruján(R) 7", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Yandy Díaz 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Yandy Díaz(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Wander Franco 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Wander Franco(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Greg Jones", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Greg Jones(R)", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brandon Lowe 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Lowe(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Curtis Mead", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Curtis Mead(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Isaac Paredes 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Isaac Paredes(R) 17", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Taylor Walls 0", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Taylor Walls(R) 0", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Randy Arozarena 56", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Randy Arozarena(R) 56", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Josh Lowe 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Lowe(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Manuel Margot 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Manuel Margot(R) 13", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Luke Raley 55", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luke Raley(R) 55", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jose Siri 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jose Siri(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Harold Ramírez 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Harold Ramírez(R) 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Texas Rangers": {
             "name": "Texas Rangers",
             "players": [
-            {"name": "Jonah Heim 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Jonah Heim(R) 28", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Sam Huff 55", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Sam Huff(R) 55", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luisangel Acuña", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luisangel Acuña(R)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ezequiel Duran 70", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ezequiel Duran(R) 70", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Josh Jung 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh Jung(R) 6", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Nathaniel Lowe 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nathaniel Lowe(R) 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jonathan Ornelas 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jonathan Ornelas(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Corey Seager 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Corey Seager(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Marcus Semien 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Marcus Semien(R) 2", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Josh H. Smith 47", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Josh H. Smith(R) 47", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Adolis García 53", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Adolis García(R) 53", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Dustin Harris", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dustin Harris(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Brad Miller 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brad Miller(R) 13", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Leody Taveras 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Leody Taveras(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Bubba Thompson 65", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bubba Thompson(R) 65", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Mitch Garver 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mitch Garver(R) 18", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Mark Mathias 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Mark Mathias(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Toronto Blue Jays": {
             "name": "Toronto Blue Jays",
             "players": [
-            {"name": "Danny Jansen 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+            {"name": "Danny Jansen(R) 9", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Alejandro Kirk 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alejandro Kirk(R) 30", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Addison Barger", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Addison Barger(R)", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Brandon Belt 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Brandon Belt(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Bo Bichette 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Bo Bichette(R) 11", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Cavan Biggio 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Cavan Biggio(R) 8", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Matt Chapman 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Matt Chapman(R) 26", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Santiago Espinal 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Santiago Espinal(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Vladimir Guerrero Jr. 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Vladimir Guerrero(R) Jr. 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Spencer Horwitz", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Spencer Horwitz(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Leo Jimenez 49", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Leo Jimenez(R) 49", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Orelvis Martinez", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Orelvis Martinez(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Kevin Kiermaier 39", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Kevin Kiermaier(R) 39", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Otto Lopez 51", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Otto Lopez(R) 51", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Nathan Lukes", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Nathan Lukes(R)", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Whit Merrifield 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Whit Merrifield(R) 15", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "George Springer 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "George Springer(R) 4", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Daulton Varsho 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Daulton Varsho(R) 25", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         },
         "Washington Nationals": {
             "name": "Washington Nationals",
             "players": [
-            {"name": "Riley Adams 15", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
+            {"name": "Riley Adams(R) 15", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78 
             }},
-                {"name": "Israel Pineda 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Israel Pineda(R) 43", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Keibert Ruiz 20", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Keibert Ruiz(R) 20", "stats": {"avg": .239, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "CJ Abrams 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "CJ Abrams(R) 5", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jake Alu 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jake Alu(R) 27", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jeimer Candelario 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jeimer Candelario(R) 9", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Jeter Downs 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jeter Downs(R) 3", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Luis García 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Luis García(R) 2", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Carter Kieboom 8", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Carter Kieboom(R) 8", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Joey Meneses 45", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Joey Meneses(R) 45", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Dominic Smith 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Dominic Smith(R) 22", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Ildemaro Vargas 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Ildemaro Vargas(R) 14", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Alex Call 62", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Alex Call(R) 62", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Jeremy De La Rosa 70", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Jeremy De La Rosa(R) 70", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Corey Dickerson 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Corey Dickerson(R) 23", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Stone Garrett 36", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Stone Garrett(R) 36", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "Victor Robles 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Victor Robles(R) 16", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}, 
-                {"name": "Lane Thomas 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
+                {"name": "Lane Thomas(R) 28", "stats": {"avg": .300, "WAR": 3.8, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }}]
         }
     };
@@ -1459,7 +1494,51 @@
     lineupSlot.appendChild(lineupNumber);
     }
 
+    // Get all lineup-slots
+    const lineupSloteroos = document.querySelectorAll('.lineup-slot');
+
+    // Loop through the lineup slots and add Positions
+    for (let i = 0; i < lineupSloteroos.length; i++) {
+    const lineupSlot = lineupSloteroos[i];
+
+    // Create a new element for the lineup Position
+    const lineupPosition = document.createElement('div');
+    lineupPosition.classList.add('lineup-position');
+    lineupPosition.innerText = '';
+
+    // Append the lineup Position to the lineup slot
+    lineupSlot.appendChild(lineupPosition);
+    }
     
+    var positions = ["C", "DH", "1B", "2B", "3B", "SS", "LF", "RF", "CF"];
+
+    $(document).ready(function() {
+    // Append the positions to the position-rectangle
+    for (var i = 0; i < positions.length; i++) {
+        var position = $('<div class="position">' + positions[i] + '</div>');
+        $('.position-rectangle').append(position);
+    }
+
+    // Make each position draggable
+    $('.position').draggable({
+        helper: 'clone',
+        cursor: 'move'
+    });
+
+    // Make each lineup-position droppable
+    $('.lineup-position').droppable({
+        accept: '.position',
+        drop: function(event, ui) {
+        $(this).empty();
+        $(this).append(ui.draggable.clone());
+        }
+    });
+    });
+
+    function clearPositions() {
+  $('.lineup-rectangle .position').remove();
+}
+
 
     // Select the dropdown menu element
     var dropdown = $('.dropdown-menu');
@@ -1535,6 +1614,8 @@
                 slot.innerHTML = '';
             });
 
+            clearPositions();
+
             
 
             // Iterate over the players in the selected team
@@ -1573,7 +1654,7 @@
     });
 
     
-    
+
 
     var lineupSlots = document.querySelectorAll(".lineup-slot");
     // Add a dragover event listener to each lineup slot
@@ -1588,12 +1669,15 @@
             console.log(playerId);
             var player = document.getElementById(playerId);
             console.log(player);
-            if (slot.childNodes.length === 1 && slot.querySelector('.player') === null) {
+            if (slot.childNodes.length === 2 && slot.querySelector('.player') === null) {
             slot.appendChild(player);
+
+   
 
 
             // Get all the players in the lineup-rectangle
             var lineupPlayers = document.querySelectorAll('.lineup-slot .player');
+            
 
             // Initialize variables to store the total WAR and AVG
             var totalAVG = 0;
@@ -1682,6 +1766,10 @@
                 slot.appendChild(stats[i]);
             });
 
+
+
+
+
        
                 $('.stats-rectangle p').draggable({
   helper: 'clone',
@@ -1735,7 +1823,9 @@ $('.lineup-rectangle .lineup-statslot').droppable({
             lineupStatsSlots.forEach(function(slot) {
                 slot.innerHTML = '';
             });
-  
+
+
+            clearPositions();
 
 
         // Loop through each player in the lineup slots
