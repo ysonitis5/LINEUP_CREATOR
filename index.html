@@ -18,16 +18,26 @@
         flex-grow: 0;
         flex-shrink: 0;
         height: 80vh;
+        position: relative;
+        font-size: .9rem;
       }
 
       .lineup-rectangle{        
         flex-grow: 0;
         flex-shrink: 0;
         height: 70vh;
+        position: relative;
+        font-size: .9rem;
+      }
+
+      .stats-rectangle {
+        position: relative;
+        font-size: .9rem;
       }
 
       .position-rectangle{
         object-fit: contain;
+        position: relative;
         display: flex;
         justify-content: flex-start;
         background-color: #fcfcfc; 
@@ -39,6 +49,7 @@
         flex-shrink: 1;
         overflow: hidden;
         overflow-x: scroll;
+        font-size: 1.2rem;
       }
 
       .lineup-slot {
@@ -69,7 +80,7 @@
       .leaguewide-stat {
         object-fit: contain;
         position: relative;
-        width: 80%;
+        width: 100%;
         border: 2px solid black;
         background-color: aliceblue;
         font-weight: bold;
@@ -77,8 +88,22 @@
         flex-grow: 0;
         flex-shrink: 1;        
         right: 0%;
-        bottom: -51%;   
+        bottom: 0%;  
       }
+
+      .stat-slot {
+        object-fit: contain;
+        position: relative;
+        width: 100%;
+        border: 2px solid black;
+        background-color: aliceblue;
+        font-weight: bold;
+        height: 7%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 0%;
+        top: 2%;  
+    }
 
     .players-rectangle .player {        
         width: 90%;
@@ -143,32 +168,13 @@
 
     }
 
-    .stat-slot {
-        object-fit: contain;
-        position: relative;
-        width: 80%;
-        border: 2px solid black;
-        background-color: aliceblue;
-        font-weight: bold;
-        height: 7%;
-        flex-grow: 0;
-        flex-shrink: 1;        
-        right: 0%;
-        bottom: 49%;  
-    }
 
+    .help-button {
+        top: 0%;
+        right: 100%;
+    }
   
-        .stat-slot .p {
-            width: 90%;
-            height: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-weight: bold;
-            flex-grow: 0;
-            flex-shrink: 1;
-            }
+
 
             .help-popup {
             position: fixed;
@@ -185,18 +191,155 @@
             display: none;
             }
 
+            .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 30%;
+                height: 55%;
+                background-image: url('logolonger.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+
+
             .position {
                 object-fit: contain;
                 position: relative;
                 text-align: center; 
                 margin-right: 10px;
                 font-weight: bolder;
-                font-size: 1.32rem;
                 flex-grow: 0;
                 flex-shrink: 1;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
 
+            @media (max-width: 900px){
+                .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 30%;
+                height: 55%;
+                background-image: url('logolonger.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+
+
+
+            @media (max-width: 650px){
+                .stats-rectangle {
+        position: relative;
+        font-size: .6rem;
+      }
+            }
+
+            @media (max-width: 450px) {
+
+                .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 30%;
+                height: 65%;
+                background-image: url('logolonger.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+
+                .players-rectangle {
+        overflow-y: scroll;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80vh;
+        position: relative;
+        font-size: .45rem;
+      }
+
+      .lineup-rectangle{        
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 70vh;
+        position: relative;
+        font-size: .6rem;
+      }
+
+      .stats-rectangle {
+        position: relative;
+        font-size: .6rem;
+      }
+
+      .position-rectangle{
+        object-fit: contain;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        background-color: #fcfcfc; 
+        border: 4px solid black; 
+        margin-top: 35px;
+        height: 10vh;
+        width: 30vw;
+        flex-grow: 0;
+        flex-shrink: 1;
+        overflow: hidden;
+        overflow-x: scroll;
+        font-size: .7rem;
+      }
+
+      .lineup-slot .player {
+        width: 55%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        position: absolute;
+        top: 0;
+        left: 15%;
+        font-weight: bold;
+        }
+
+        .lineup-number {
+        object-fit: contain;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 15%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 50%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        left: 0%;
+        top: 0%;
+
+    }
+
+    .lineup-position {
+        object-fit: contain;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 25%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 100%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 10%;
+        bottom: 0%;
+
+    }
+            }
+
+            }
 
     </style>
   </head>
@@ -223,7 +366,7 @@
         </div>
         <div class="col-6">
             
-          <h2 class="text-center" style="text-shadow: 2px 2px #000000; background-color: #fcfcfc; font-family: 'Arial', cursive; font-size: 50px;">LINEUP CREATOR</h2>
+          <h2 class="text-center" style="background-color: #fcfcfc; font-family: 'Arial', cursive; font-size: 2rem;">LINEUP CREATOR</h2>
           <div class="position-rectangle"></div>
           <div class="lineup-rectangle rectangle" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 30px;">
             
@@ -239,11 +382,11 @@
             <div class="lineup-statslot"></div>
             <div class="lineup-statslot"></div>
             <div class="lineup-statslot"></div>
-            
+            <div class="logo"></div>
           </div>
         </div>
         <div class="col-3">
-          <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 86vh; border: 4px solid black; margin-top: 87px;">
+          <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 155px;">
             <div class="leaguewide-stat">League AVG: .243</div>
             <div class="leaguewide-stat">League OPS: .706</div>
             <div class="leaguewide-stat">League OBP: .312</div>
@@ -1011,7 +1154,7 @@
             }},
                 {"name": "'OF' Estevan Florial(L) 90", "stats": {"avg": .311, "WAR": 10.4, "OPS": .750, "HR": 12, "Stolen Bases": 2, "OBP": .546, "SO": 78, "RBI": 78
             }},
-                {"name": "'OF' Aaron Hicks(R) 31", "stats": {"avg": .216, "WAR": 3.8, "OPS": .642, "HR": 8, "Stolen Bases": 10, "OBP": .330, "SO": 109, "RBI": 40
+                {"name": "'OF' Aaron Hicks(S) 31", "stats": {"avg": .216, "WAR": 3.8, "OPS": .642, "HR": 8, "Stolen Bases": 10, "OBP": .330, "SO": 109, "RBI": 40
             }}, 
                 {"name": "'CF' Everson Pereira(L) 93", "stats": {"avg": .235, "WAR": 3.8, "OPS": .696, "HR": 6, "Stolen Bases": 5, "OBP": .314, "SO": 52, "RBI": 21
             }}, 
@@ -1860,6 +2003,7 @@ $('.lineup-rectangle .lineup-statslot').droppable({
     html2canvas(elementsToScreenshot).then(function(canvas) {
         // Convert the canvas to a data URL
         var dataURL = canvas.toDataURL();
+        
 
         // Create a link element and trigger a download of the screenshot
         var link = document.createElement("a");
