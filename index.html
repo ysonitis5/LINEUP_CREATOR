@@ -50,6 +50,11 @@
         font-size: 1.2rem;
       }
 
+      .lineupstats-rectangle {
+        position: relative;
+        font-size: .9rem;
+      }
+
       .lineup-slot {
         object-fit: contain;
         position: relative;
@@ -72,7 +77,24 @@
         flex-grow: 0;
         flex-shrink: 1;        
         right: -70%;
-        bottom: 58%;   
+        bottom: 58%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;   
+      }
+
+      .lineupstat {
+        width: 100%;
+        height: 14.3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-weight: bold;
+        background-color: aliceblue;
       }
 
       .leaguewide-stat {
@@ -82,38 +104,14 @@
         border: 2px solid black;
         background-color: aliceblue;
         font-weight: bold;
-        height: 7%;
+        height: 14.3%;
         flex-grow: 0;
         flex-shrink: 1;        
         right: 0%;
         bottom: 0%;  
       }
 
-      .stat-slot {
-        object-fit: contain;
-        position: relative;
-        width: 100%;
-        border: 2px solid black;
-        background-color: aliceblue;
-        font-weight: bold;
-        height: 7%;
-        flex-grow: 0;
-        flex-shrink: 1;        
-        right: 0%;
-        top: 2%;  
-    }
 
-    .stats-rectangle .lineupstat {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-grow: 0;
-        flex-shrink: 1;
-        font-weight: bold;
-    }
 
     .players-rectangle .player {        
         width: 90%;
@@ -388,7 +386,7 @@
           </div>
         </div>
         <div class="col-3">
-          <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 80vh; border: 4px solid black; margin-top: 155px;">
+          <div class="stats-rectangle rectangle" style="background-color: #fcfcfc; height: 40vh; border: 4px solid black; margin-top: 155px;">
             <div class="leaguewide-stat">League AVG: .243</div>
             <div class="leaguewide-stat">League OPS: .706</div>
             <div class="leaguewide-stat">League OBP: .312</div>
@@ -397,6 +395,8 @@
             <div class="leaguewide-stat">League SB/G: 0.51</div>
             <div class="leaguewide-stat">League SO/G: 8.40</div>
           </div>
+          <div class="lineupstats-rectangle rectangle" style="background-color: #fcfcfc; height: 40vh; border: 4px solid black; margin-top: 20px;"></div>
+          <div>
         </div>
       </div>
     </div>
@@ -1861,113 +1861,89 @@
                 }
             }
 
-            // Get the stats-rectangle element
-                var statsRectangle = document.querySelector('.stats-rectangle');
-
-            // Check if there are already 7 stat slots
-            var existingStatSlots = document.querySelectorAll('.stat-slot');
-            if (existingStatSlots.length < 7) {
-                // Create five new div elements with the class "stat-slot"
-                for (var i = 0; i < 7; i++) {
-                    var statSlot = document.createElement('div');
-                    statSlot.classList.add("stat-slot");
-                    // Append the stat-slot to the stats-rectangle
-                    statsRectangle.appendChild(statSlot);
-                }
-            }
-
-            console.log(player.name, player.stats);
-            var statsSlots = document.querySelectorAll('.stat-slot');
-            
 
             // Create a new p element to display the average AVG
-            var avgP = document.createElement('div');
-            avgP.innerHTML = 'Lineup AVG: ' + (totalAVG / lineupPlayers.length).toFixed(3);
-            
+            var avgP = 'Lineup AVG: ' + (totalAVG / lineupPlayers.length).toFixed(3);        
 
             // Create a new p element to display the average OPS
-            var opsP = document.createElement('div');
-            opsP.innerHTML = 'Lineup OPS: ' + (totalOPS / lineupPlayers.length).toFixed(3);
-            
+            var opsP = 'Lineup OPS: ' + (totalOPS / lineupPlayers.length).toFixed(3);
 
             // Create a new p element to display the total HR
-            var hrP = document.createElement('div');
-            hrP.innerHTML = 'HR/G: ' + (totalHR / 162).toFixed(2);
-           
+            var hrP = 'HR/G: ' + (totalHR / 162).toFixed(2);
+
 
             // Create a new p element to display the total SB
-            var sbP = document.createElement('div');
-            sbP.innerHTML = 'SB/G: ' + (totalSB / 162).toFixed(2);
-            
+            var sbP = 'SB/G: ' + (totalSB / 162).toFixed(2);
+ 
             // Create a new p element to display the total SB
-            var obpbP = document.createElement('div');
-            obpbP.innerHTML = 'Lineup OBP: ' + (totalOBP / lineupPlayers.length).toFixed(3);
+            var obpbP = 'Lineup OBP: ' + (totalOBP / lineupPlayers.length).toFixed(3);
 
             // Create a new p element to display the total SB
-            var soP = document.createElement('div');
-            soP.innerHTML = 'SO/G: ' + (totalSO / 162).toFixed(2);
+            var soP = 'SO/G: ' + (totalSO / 162).toFixed(2);
 
             // Create a new p element to display the total SB
-            var rbiP = document.createElement('div');
-            rbiP.innerHTML = 'RBI/G: ' + (totalRBI / 162).toFixed(2);
+            var rbiP = 'RBI/G: ' + (totalRBI / 162).toFixed(2);
 
             var stats = [avgP, opsP, hrP, sbP, obpbP, soP, rbiP];
 
-            
 
-            statsSlots.forEach(function(slot,i){
-                if (slot.hasChildNodes()) {
-                    slot.innerHTML = '';
-                }
-                var stat = $(stats[i]);
-                stat.addClass('lineupstat');
-                slot.appendChild(stat[0]);
-            });
+// Get the stats-rectangle element
+var lineupstatsRectangle = document.querySelector('.lineupstats-rectangle');
 
-
+var lineupstatDivs = lineupstatsRectangle.querySelectorAll('.lineupstat');
+if (lineupstatDivs.length === 7) {
+  lineupstatDivs.forEach(function(lineupstatDiv) {
+    lineupstatDiv.remove();
+  });
+}
 
 
-
-       
-            $('.stats-rectangle .lineupstat').draggable({
-  helper: 'clone',
-  start: function(event, ui) {
-    $(this).on('touchstart', function(event) {
-      event.preventDefault();
-      $(this).trigger('mousedown');
-    });
-  },
-  stop: function(event, ui) {
-    $(ui.helper).remove();
-  }
-});
-
-$('.lineup-rectangle .lineup-statslot').droppable({
-  accept: '.stats-rectangle .lineupstat',
-  drop: function(event, ui) {
-    if (!$(this).children().length) {
-      $(this).append($(ui.draggable).clone().draggable({
-        start: function(event, ui) {
-          $(this).on('touchstart', function(event) {
-            event.preventDefault();
-            $(this).trigger('mousedown');
-          });
-        },
-        stop: function(event, ui) {
-          if ($(ui.helper).parent().hasClass("stats-rectangle")) {
-            $(ui.helper).remove();
-          } else {
-            $(ui.helper).remove();
-            $(".stats-rectangle").append($(ui.draggable).clone().draggable({
-              stop: function(event, ui) {
-                $(ui.helper).remove();
-              }
-            }));
-          }
-        }
-      }));
+stats.forEach(function(stat, i) {
+  // Create a new div element for each stat
+  var statDiv = document.createElement('div');
+  statDiv.innerHTML = stat;
+  statDiv.classList.add('lineupstat');
+  statDiv.setAttribute("draggable", "true");
+  
+  // Add drag and drop functionality to each stat div
+  statDiv.addEventListener("dragstart", function(event) {
+    event.dataTransfer.setData("text", event.target.innerHTML);
+  });
+  statDiv.addEventListener("dragover", function(event) {
+    event.preventDefault();
+  });
+  lineupstatsRectangle.appendChild(statDiv);
+  
+  // Make the stat divs draggable
+  $(statDiv).draggable({
+    helper: 'clone',
+    stop: function(event, ui) {
+      $(ui.helper).remove();
     }
-  }
+  });
+  
+  // Make the lineup-statslot divs droppable
+  $('.lineup-statslot').droppable({
+    accept: '.lineupstat',
+    drop: function(event, ui) {
+      if (!$(this).children().length) {
+        $(this).append($(ui.draggable).clone().draggable({
+          stop: function(event, ui) {
+            if ($(ui.helper).parent().hasClass(".lineupstats-rectangle")) {
+              $(ui.helper).remove();
+            } else {
+              $(ui.helper).remove();
+              $(".lineupstats-rectangle").append($(ui.draggable).clone().draggable({
+                stop: function(event, ui) {
+                  $(ui.helper).remove();
+                }
+              }));
+            }
+          }
+        }));
+      }
+    }
+  });
 });
 
 
