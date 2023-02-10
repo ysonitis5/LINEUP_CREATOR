@@ -44,11 +44,9 @@
         border: 4px solid black; 
         margin-top: 35px;
         height: 10vh;
-        width: 30vw;
+        width: 40vw;
         flex-grow: 0;
         flex-shrink: 1;
-        overflow: hidden;
-        overflow-x: scroll;
         font-size: 1.2rem;
       }
 
@@ -105,6 +103,18 @@
         top: 2%;  
     }
 
+    .stats-rectangle .lineupstat {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-weight: bold;
+    }
+
     .players-rectangle .player {        
         width: 90%;
         height: 90%;
@@ -158,6 +168,7 @@
         text-align: center;        
         width: 15%;
         font-weight: bold;
+        font-size: 1rem;
         border: 2px solid black;
         background-color: aliceblue;
         height: 100%;
@@ -169,50 +180,43 @@
     }
 
 
-    .help-button {
-        top: 0%;
-        right: 100%;
+    .help-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
     }
-  
+
+    .hidden {
+    display: none;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 30%;
+        height: 55%;
+        background-image: url('logolonger.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        }
 
 
-            .help-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 10px;
-            }
-
-            .hidden {
-            display: none;
-            }
-
-            .logo {
-                position: absolute;
-                top: 0%;
-                right: 0%;
-                width: 30%;
-                height: 55%;
-                background-image: url('logolonger.jpg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                }
-
-
-            .position {
-                object-fit: contain;
-                position: relative;
-                text-align: center; 
-                margin-right: 10px;
-                font-weight: bolder;
-                flex-grow: 0;
-                flex-shrink: 1;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+    .position {
+        object-fit: contain;
+        position: relative;
+        text-align: center; 
+        margin-right: 10px;
+        font-weight: bolder;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 
             @media (max-width: 900px){
                 .logo {
@@ -279,7 +283,7 @@
         border: 4px solid black; 
         margin-top: 35px;
         height: 10vh;
-        width: 30vw;
+        width: 40vw;
         flex-grow: 0;
         flex-shrink: 1;
         overflow: hidden;
@@ -354,13 +358,11 @@
             <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
-          <button id="help-button">Help</button>
-            <div id="help-popup" class="hidden">
-            <p>Welcome to Lineup Creator! To use, first choose a team then build a lineup by dragging players into the lineup. Then simply drag and drop three stats into the boxes besides the lineup. Only one stat can be placed in each box. To remove a stat, simply drag it out and drag in a new stat.</p>
-            <button id="close-popup">Close</button>
-            </div>
+
           <button id="reset-button">Reset</button>
           <button id="download-button">Download</button>
+          <button id="resetstats-button">Reset Stats</button>
+          <button id="help-button">Help</button>
           <div class="players-rectangle rectangle d-flex flex-column" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 35px;">
           </div>
         </div>
@@ -1879,43 +1881,47 @@
             
 
             // Create a new p element to display the average AVG
-            var avgP = document.createElement('p');
+            var avgP = document.createElement('div');
             avgP.innerHTML = 'Lineup AVG: ' + (totalAVG / lineupPlayers.length).toFixed(3);
             
 
             // Create a new p element to display the average OPS
-            var opsP = document.createElement('p');
+            var opsP = document.createElement('div');
             opsP.innerHTML = 'Lineup OPS: ' + (totalOPS / lineupPlayers.length).toFixed(3);
             
 
             // Create a new p element to display the total HR
-            var hrP = document.createElement('p');
+            var hrP = document.createElement('div');
             hrP.innerHTML = 'HR/G: ' + (totalHR / 162).toFixed(2);
            
 
             // Create a new p element to display the total SB
-            var sbP = document.createElement('p');
+            var sbP = document.createElement('div');
             sbP.innerHTML = 'SB/G: ' + (totalSB / 162).toFixed(2);
             
             // Create a new p element to display the total SB
-            var obpbP = document.createElement('p');
+            var obpbP = document.createElement('div');
             obpbP.innerHTML = 'Lineup OBP: ' + (totalOBP / lineupPlayers.length).toFixed(3);
 
             // Create a new p element to display the total SB
-            var soP = document.createElement('p');
+            var soP = document.createElement('div');
             soP.innerHTML = 'SO/G: ' + (totalSO / 162).toFixed(2);
 
             // Create a new p element to display the total SB
-            var rbiP = document.createElement('p');
+            var rbiP = document.createElement('div');
             rbiP.innerHTML = 'RBI/G: ' + (totalRBI / 162).toFixed(2);
 
             var stats = [avgP, opsP, hrP, sbP, obpbP, soP, rbiP];
+
+            
 
             statsSlots.forEach(function(slot,i){
                 if (slot.hasChildNodes()) {
                     slot.innerHTML = '';
                 }
-                slot.appendChild(stats[i]);
+                var stat = $(stats[i]);
+                stat.addClass('lineupstat');
+                slot.appendChild(stat[0]);
             });
 
 
@@ -1923,18 +1929,30 @@
 
 
        
-                $('.stats-rectangle p').draggable({
+            $('.stats-rectangle .lineupstat').draggable({
   helper: 'clone',
+  start: function(event, ui) {
+    $(this).on('touchstart', function(event) {
+      event.preventDefault();
+      $(this).trigger('mousedown');
+    });
+  },
   stop: function(event, ui) {
     $(ui.helper).remove();
   }
 });
 
 $('.lineup-rectangle .lineup-statslot').droppable({
-  accept: '.stats-rectangle p',
+  accept: '.stats-rectangle .lineupstat',
   drop: function(event, ui) {
     if (!$(this).children().length) {
       $(this).append($(ui.draggable).clone().draggable({
+        start: function(event, ui) {
+          $(this).on('touchstart', function(event) {
+            event.preventDefault();
+            $(this).trigger('mousedown');
+          });
+        },
         stop: function(event, ui) {
           if ($(ui.helper).parent().hasClass("stats-rectangle")) {
             $(ui.helper).remove();
@@ -1969,7 +1987,7 @@ $('.lineup-rectangle .lineup-statslot').droppable({
         // Get all the players in the lineup slots
         var playersInLineupSlots = document.querySelectorAll(".lineup-slot .player");
          // Remove only the .stats-rectangle p elements
-  statsRectangle.querySelectorAll('.stats-rectangle p').forEach(el => el.remove());
+  statsRectangle.querySelectorAll('.stats-rectangle div').forEach(el => el.remove());
    // Clear all the lineup slots
    var lineupStatsSlots = document.querySelectorAll('.lineup-statslot');
             lineupStatsSlots.forEach(function(slot) {
@@ -1989,6 +2007,20 @@ $('.lineup-rectangle .lineup-statslot').droppable({
             playersRectangle.appendChild(player);
         }
     });
+
+
+
+    // Get the resetstats button
+    var resetButton = document.getElementById("resetstats-button");
+
+    // Add a click event listener to the reset button
+    resetButton.addEventListener("click", function() {
+         // Remove only the .stats-rectangle p elements
+         var lineupStatsSlots = document.querySelectorAll('.lineup-statslot');
+            lineupStatsSlots.forEach(function(slot) {
+                slot.innerHTML = '';
+    });
+});
 
 
     // Select the download button
@@ -2013,17 +2045,10 @@ $('.lineup-rectangle .lineup-statslot').droppable({
   });
 });
 
-const helpButton = document.getElementById("help-button");
-const helpPopup = document.getElementById("help-popup");
-const closePopup = document.getElementById("close-popup");
-
-helpButton.addEventListener("click", function() {
-  helpPopup.classList.remove("hidden");
+document.getElementById("help-button").addEventListener("click", function() {
+window.location.href = "help.html";
 });
 
-closePopup.addEventListener("click", function() {
-  helpPopup.classList.add("hidden");
-});
 
     </script>
   </body>
