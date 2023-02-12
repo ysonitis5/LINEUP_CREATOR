@@ -2,20 +2,43 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Help</title>
   <style>
           body {
         background-image: linear-gradient(to left, rgb(178, 226, 132), lightblue);
         color: black;
+        border: 4px solid black;
+        border-radius: 10%; 
         font-size: 1.2rem;
         font-weight: bold;
+        padding-top: 10%;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-bottom: 10%;
 
       }
+
+      #goback-button {
+        padding: 2em 4em;
+        background-color: rgb(52, 55, 223);
+        border: none;
+        border-radius: 5em;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: absolute;  
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
   </style>
 </head>
 <body>
-    Hopefully the site is easy for you to use but if you need some help just read below:
+    <h2>Hopefully the site is easy for you to use but if you need some help just read below:</h2> 
+    
     You can begin by selecting a team from the Teams drop down menu in the top left of the screen.
     Then drag the players you into the corresponding lineup slots. 
     Above the lineup are the playable positions you can assign to each player. 
@@ -25,6 +48,17 @@
     You can then drag three lineup stats into the slots beside the lineup that best represent your lineup.
     The reset button will reset the entire middle section, and reset stats will simply reset the three stat slots 
     incase you made some adjustments.
+
+    <p>For mobile users instead of dragging the stats just hold for about 2 seconds and then tap the slot you'd like it to populate
+      and it will amend to it.</p>
+
     Hope you enjoy and have fun building some unique lineups before gameday!
+
+    <button id="goback-button">Go Back</button>
+    <script>
+    document.getElementById("goback-button").addEventListener("click", function() {
+      window.location.href = "lineupbuilder.html";
+      });
+    </script>
 </body>
 </html>
