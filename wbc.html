@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>World Baseball Classic Edition</title>
+    <style>
+      /* Custom CSS for green background and black text */
+      body {
+        background-color: rgb(178, 226, 132);
+        color: black;
+      }
+
+      .players-rectangle {
+        overflow-y: scroll;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80vh;
+        position: relative;
+        font-size: .9rem;
+      }
+
+      .lineup-rectangle{        
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 70vh;
+        position: relative;
+        font-size: .9rem;
+      }
+
+      .position-rectangle{
+        object-fit: contain;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        background-color: #fcfcfc; 
+        border: 4px solid black; 
+        margin-top: 35px;
+        height: 10vh;
+        width: 40vw;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-size: 1.2rem;
+      }
+
+      .lineup-slot {
+        object-fit: contain;
+        position: relative;
+        display: flex;
+        width: 65%;
+        border: 2px solid black;
+        height: 11.12%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        }
+
+
+    .players-rectangle .player {        
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-weight: bold;
+        }
+
+      .lineup-slot .player {
+        width: 75%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        font-weight: bold;
+        }
+
+    .lineup-number {
+        object-fit: contain;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 10%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 50%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 0%;
+        bottom: 0%;
+
+    }
+
+    .lineup-position {
+        object-fit: contain;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 15%;
+        font-weight: bold;
+        font-size: 1rem;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 100%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        left: 75%;
+        bottom: 0%;
+
+    }
+
+    .logo {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 30%;
+        height: 55%;
+        background-image: url('logolonger.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        }
+
+
+    .position {
+        object-fit: contain;
+        position: relative;
+        text-align: center; 
+        margin-right: 10px;
+        font-weight: bolder;
+        flex-grow: 0;
+        flex-shrink: 1;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        max-height: 5vh; 
+    }
+
+
+    @media (max-width: 2000px){
+        .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                max-width: 30%;
+                max-height: 40%;
+                background-image: url('logo500.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+    }
+
+            @media (max-width: 900px){
+                .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 30%;
+                height: 55%;
+                background-image: url('logolonger.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+
+
+
+            @media (max-width: 700px){
+
+      .position-rectangle{
+        object-fit: contain;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;        
+        flex-wrap: wrap;
+        background-color: #fcfcfc; 
+        border: 4px solid black; 
+        margin-top: 35px;
+        height: 10vh;
+        width: 40vw;
+        flex-grow: 0;
+        flex-shrink: 1;
+        overflow: hidden;
+        overflow-x: scroll;
+        font-size: .699rem;
+      }
+            }
+
+            @media (max-width: 450px) {
+
+                .logo {
+                position: absolute;
+                top: 0%;
+                right: 0%;
+                width: 30%;
+                height: 65%;
+                background-image: url('logolonger.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                }
+
+
+                .players-rectangle {
+        overflow-y: scroll;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80vh;
+        position: relative;
+        font-size: .45rem;
+      }
+
+      .lineup-rectangle{        
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 70vh;
+        position: relative;
+        font-size: .6rem;
+      }
+
+      .position-rectangle{
+        object-fit: contain;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;        
+        flex-wrap: wrap;
+        background-color: #fcfcfc; 
+        border: 4px solid black; 
+        margin-top: 35px;
+        height: 10vh;
+        width: 40vw;
+        flex-grow: 0;
+        flex-shrink: 1;
+        overflow: hidden;
+        overflow-x: scroll;
+        font-size: .5rem;
+      }
+
+      .lineup-slot .player {
+        width: 58%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 1;
+        position: absolute;
+        top: 0;
+        left: 15%;
+        font-weight: bold;
+        }
+
+        .lineup-number {
+        object-fit: contain;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 15%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 50%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        left: 0%;
+        top: 0%;
+
+    }
+
+    .lineup-position {
+        object-fit: contain;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;        
+        width: 25%;
+        font-weight: bold;
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 100%;
+        flex-grow: 0;
+        flex-shrink: 1;        
+        right: 10%;
+        bottom: 0%;
+
+    }
+            }
+
+            }
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <div class="dropdown my-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Teams
+            </button>
+            <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
+            </div>
+          </div>
+          <button id="mlb-button">MLB</button>
+          <button id="reset-button">Reset</button>
+          <button id="download-button">Download</button>
+          <button id="help-button">Help</button>
+          <div class="players-rectangle rectangle d-flex flex-column" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 35px;">
+          </div>
+        </div>
+        <div class="col-6">
+            
+          <h2 class="text-center" style="background-color: #fcfcfc; font-family: 'Arial', cursive; font-size: 2rem;">LINEUP CREATOR</h2>
+          <div class="position-rectangle"></div>
+          <div class="lineup-rectangle rectangle" style="background-color: #fcfcfc; border: 4px solid black; margin-top: 30px;">
+            
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="lineup-slot"></div>
+            <div class="logo"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5748932682142968"
+     crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>   
+    <script>
+
+var data = {
+        "Australia": {
+            "name": "Australia",
+            "players": [
+            {"name": "'C' Alex Hall(S) 11"},
+                {"name": "'C' Jordan McArdle(L) 18"}, 
+                {"name": "'C' Robbie Perkins(R) 14"}, 
+                {"name": "'C' Ryan Battaglia(R) 14"}, 
+                {"name": "'IF' Darryl George(R) 13"},
+                {"name": "'IF' Jake Bowey(R) 62"},
+                {"name": "'IF' Jarryd Dale(L) 28"}, 
+                {"name": "'IF' Liam Spence(R) 64"}, 
+                {"name": "'IF' Logan Wade(R) 3"},
+                {"name": "'IF' Rixon Wingrove(S) 4"},
+                {"name": "'IF' Robbie Glendinning(S) 2"}, 
+                {"name": "'OF' Aaron Whitefield(R) 15"}, 
+                {"name": "'OF' Andrew Campbell(L) 10"},
+                {"name": "'OF' Ulrich Bojarski(R) 53"}]
+        },
+        "Canada": {
+            "name": "Canada",
+            "players": [
+            {"name": "'C' Andy Yerzy(L) 11"},
+                {"name": "'C' Bo Naylor(L) 18"}, 
+                {"name": "'C' Kellin Deglan(L) 14"}, 
+                {"name": "'IF' Abraham Toro(S) 13"},
+                {"name": "'IF' Damiano Palmegiani(R) 62"},
+                {"name": "'IF' Edouard Julien(L) 28"}, 
+                {"name": "'IF' Freddie Freeman(L) 64"}, 
+                {"name": "'IF' Jared Young(L) 3"},
+                {"name": "'IF' Otto Lopez(R) 4"},
+                {"name": "'OF' Denzel Clarke(R) 4"},
+                {"name": "'OF' Jacob Robson(L) 2"}, 
+                {"name": "'OF' Owen Caissie(L) 15"}, 
+                {"name": "'OF' Tyler O'Neill(R) 10"}]
+        },
+        "China": {
+            "name": "China",
+            "players": [
+            {"name": "'C' Chen Chen(R) 11"},
+                {"name": "'C' Ning Li(R) 18"}, 
+                {"name": "'C' Yifan Li(R) 14"}, 
+                {"name": "'C' Yun Lu(R) 13"},
+                {"name": "'IF' Chen Chen(L) 62"},
+                {"name": "'IF' Chenchen Luan(L) 28"}, 
+                {"name": "'IF' Jie Cao(R) 64"}, 
+                {"name": "'IF' Jin Yang(R) 3"},
+                {"name": "'IF' Ray Chang(R) 4"},
+                {"name": "'IF' YongKang Kou(L) 2"}, 
+                {"name": "'OF' Jinjun Luo(R) 15"}, 
+                {"name": "'OF' Pei Liang(R) 10"},
+                {"name": "'OF' Rongji Liang(R) 53"},
+                {"name": "'OF' Xiao Han(L) 81" }, 
+                {"name": "'OF' Yuheng Lyu(R) 7"}, 
+                {"name": "'OF' Yusuke Masago(R) 79"}]
+        },
+        "Chinese Taipei": {
+            "name": "Chinese Taipei",
+            "players": [
+            {"name": "'C' Dai-An Lin(R) 11"},
+                {"name": "'C' Kungkuan Giljegiljaw(R) 18"}, 
+                {"name": "'C' Yu-Chieh Kao(R) 14"}, 
+                {"name": "'IF' Kun-Yu Chiang(R) 13"},
+                {"name": "'IF' Kuo-Chen Fan(R) 62"},
+                {"name": "'IF' Li Lin(R) 28"}, 
+                {"name": "'IF' Nien-Ting Wu(L) 64"}, 
+                {"name": "'IF' Tsung-Che Cheng(L) 3"},
+                {"name": "'IF' Tzu-Wei Lin(L) 4"},
+                {"name": "'IF' Wei-Chen Wang(L) 2"}, 
+                {"name": "'IF' Yu Chang(R) 15"}, 
+                {"name": "'OF' Chen-Wei Chen(L) 10"},
+                {"name": "'OF' Chieh-Hsien Chen(L) 53"},
+                {"name": "'OF' Chin Cheng(R) 81" }, 
+                {"name": "'OF' Po-Jung Wang(L) 7"}, 
+                {"name": "'OF' Tien-Hsin Kuo(L) 79"}]
+        },
+        "Colombia": {
+            "name": "Colombia",
+            "players": [
+            {"name": "'C' Elias Díaz(S) 11"},
+                {"name": "'C' Gustavo Campero(S) 18"}, 
+                {"name": "'C' Jorge Alfaro(R) 14"}, 
+                {"name": "'C' Meibrys Viloria(L) 13"},
+                {"name": "'IF' Adrián Sanchez(R) 62"},
+                {"name": "'IF' Dayan Frias(W) 28"}, 
+                {"name": "'IF' Donovan Solano(R) 64"}, 
+                {"name": "'IF' Evan Mendoza(R) 3"},
+                {"name": "'IF' Fabian Pertuz(R) 4"},
+                {"name": "'IF' Gio Urshela(R) 2"}, 
+                {"name": "'IF' Jordan Diaz(R) 15"}, 
+                {"name": "'OF' Harold Ramírez(R) 10"},
+                {"name": "'OF' Jesus Marriaga(R) 53"},
+                {"name": "'OF' Oscar Mercado(R) 81" }, 
+                {"name": "'OF' Tito Polo(R) 7"}]
+        },
+        "Cuba": {
+            "name": "Cuba",
+            "players": [
+            {"name": "'C' Andrys Perez(R) 11"},
+                {"name": "'C' Ariel Martinez(R) 18"}, 
+                {"name": "'C' Lorenzo Quintana(R) 14"}, 
+                {"name": "'IF' Andy Ibáñez(R) 13"},
+                {"name": "'IF' Dayan Garcia(R) 62"},
+                {"name": "'IF' Erisbel Arruebarrena(R) 28"}, 
+                {"name": "'IF' Luis Mateo(R) 64"}, 
+                {"name": "'IF' Yadil Mujica(L) 3"},
+                {"name": "'IF' Yoán Moncada(S) 4"},
+                {"name": "'IF' Yurisbel Gracial(R) 2"}, 
+                {"name": "'OF' Alfredo Despaigne(R) 15"}, 
+                {"name": "'OF' Luis Robert Jr.(R) 10"},
+                {"name": "'OF' Roel Santos(L) 81" },
+                {"name": "'OF' Yadir Drake(R) 53"},
+                {"name": "'OF' Yoelkis Guibert(L) 81" }, 
+                {"name": "'OF' Yoenis Cespedes(R) 7"}]
+        },
+        "Czech Republic": {
+            "name": "Czech Republic",
+            "players": [
+            {"name": "'C' Daniel Vavrusa(r) 11"},
+                {"name": "'C' Martin Cervenka(R) 18"}, 
+                {"name": "'IF' Eric Sogard(L) 14"}, 
+                {"name": "'IF' Filip Smola(L) 13"},
+                {"name": "'IF' Jakub Hajtmar(R) 62"},
+                {"name": "'IF' Jakub Kubica(L) 28"}, 
+                {"name": "'IF' Martin Cervinka(R) 64"}, 
+                {"name": "'IF' Milan Prokop(R) 3"},
+                {"name": "'IF' Petr Zyma(R) 4"},
+                {"name": "'IF' Vojtech Mensik(R) 2"}, 
+                {"name": "'IF' William Escala(R) 15"}, 
+                {"name": "'OF' Arnost Dubovy(R) 10"},
+                {"name": "'OF' Jakub Grepl(R) 53"},
+                {"name": "'OF' Marek Chlup(R) 81" }, 
+                {"name": "'OF' Marek Krejcirik(L) 7"}, 
+                {"name": "'OF' Martin Muzik(R) 79"},
+                {"name": "'OF' Matej Mensik(R) 12"}]
+        },
+        "Dominican Republic": {
+            "name": "Dominican Republic",
+            "players": [
+            {"name": "'C' Francisco Mejía(S) 11"},
+                {"name": "'C' Gary Sanchez(R) 18"}, 
+                {"name": "'IF' Jean Segura(R) 14"}, 
+                {"name": "'IF' Jeremy Peña(R) 13"},
+                {"name": "'IF' Ketel Marte(S) 62"},
+                {"name": "'IF' Manny Machado(R) 28"}, 
+                {"name": "'IF' Nelson Cruz(R) 64"}, 
+                {"name": "'IF' Rafael Devers(G) 3"},
+                {"name": "'IF' Robinson Canó(L) 22"},
+                {"name": "'IF' Vladimir Guerrero Jr.(R) 27"}, 
+                {"name": "'IF' Wander Franco(S) 5"}, 
+                {"name": "'IF' Willy Adames(R) 27"},
+                {"name": "'OF' Eloy Jiménez(R) 74"},
+                {"name": "'OF' Juan Soto(L) 22" }, 
+                {"name": "'OF' Julio Rodríguez(R) 44"}, 
+                {"name": "'OF' Teoscar Hernández(R) 35"}]
+        },
+        "Great Britain": {
+            "name": "Great Britain",
+            "players": [
+            {"name": "'C' Harry Ford(R) 11"},
+                {"name": "'C' Ural Forbes(R) 18"}, 
+                {"name": "'IF' BJ Murray Jr.(S) 14"}, 
+                {"name": "'IF' Justin Wylie(R) 13"},
+                {"name": "'IF' Lucius Fox(S) 62"},
+                {"name": "'IF' Nick Ward(L) 28"}, 
+                {"name": "'OF' Alex Crosby(L) 64"}, 
+                {"name": "'OF' Anfernee Seymour(S) 3"},
+                {"name": "'OF' Chavez Young(S) 4"},
+                {"name": "'OF' D'Shawn Knowles(S) 2"}, 
+                {"name": "'OF' Darnell Sweeney(S) 15"}, 
+                {"name": "'OF' Matt Koperniak(L) 10"},
+                {"name": "'OF' Trayce Thompson(R) 53"}]
+        },
+        "Israel": {
+            "name": "Israel",
+            "players": [
+            {"name": "'C' Garrett Stubbs(L) 21"},
+                {"name": "'C' Jakob Goldfarb(L) 18"}, 
+                {"name": "'C' Ryan Lavarnway(R) 20"}, 
+                {"name": "'IF' Assaf Lowengart(R) 13"},
+                {"name": "'IF' Danny Valencia(R) 2"},
+                {"name": "'IF' Matt Mervis(L) 79"}, 
+                {"name": "'IF' Michael Wielansky(R) 64"}, 
+                {"name": "'IF' Noah Mendlinger(L) 16"},
+                {"name": "'IF' Spencer Horwitz(L) 4"},
+                {"name": "'IF' Ty Kelly(S) 80"}, 
+                {"name": "'IF' Zack Gelof(R) 15"}, 
+                {"name": "'OF' Alex Dickerson(L) 25"},
+                {"name": "'OF' Joc Pederson(L) 23"}]
+        },
+        "Italy": {
+            "name": "Italy",
+            "players": [
+            {"name": "'C' Alberto Mineo(L) 11"},
+                {"name": "'C' Brett Sullivan(L) 24"}, 
+                {"name": "'C' Dominic Miroglio(R) 59"}, 
+                {"name": "'C' Vito Friscia(R) 13"},
+                {"name": "'IF' David Fletcher(R) 52"},
+                {"name": "'IF' John Valente(R) 91"}, 
+                {"name": "'IF' Miles Mastrobuoni(L) 20"}, 
+                {"name": "'IF' Nicky Lopez(L) 8"},
+                {"name": "'IF' Robel García(S) 82"},
+                {"name": "'IF' Vinnie Pasquantino(L) 9"}, 
+                {"name": "'OF' Ben DeLuzio(R) 78"}, 
+                {"name": "'OF' Dominic FletcheE(L) 79"},
+                {"name": "'OF' Sal FrelicK(L) 79"}]
+        },
+        "Japan": {
+            "name": "Japan",
+            "players": [
+            {"name": "'C' Takumi Ohshiro(R) 11"},
+                {"name": "'C' Takuya Kai(R) 18"}, 
+                {"name": "'IF' Yuhei Nakamura(R) 14"}, 
+                {"name": "'IF' Hotaka Yamakawa(R) 13"},
+                {"name": "'IF' Kazuma Okamoto(R) 62"},
+                {"name": "'IF' Munetaka Murakami(L) 28"}, 
+                {"name": "'IF' Seiya Suzuki(R) 64"}, 
+                {"name": "'IF' Shugo Maki(R) 3"},
+                {"name": "'IF' Sosuke Genda(L) 4"},
+                {"name": "'IF' Takumu Nakano(L) 2"}, 
+                {"name": "'IF' Tetsuto Yamada(R) 15"}, 
+                {"name": "'IF' Ukyo Shuto(R) 10"},
+                {"name": "'OF' Kensuke Kondoh(L) 53"},
+                {"name": "'OF' Lars Nootbaar(L) 21" }, 
+                {"name": "'OF' Masataka Yoshida(L) 7"},
+                {"name": "'OF' Shohei Ohtani(L) 17"}]
+        },
+        "Korea": {
+            "name": "Korea",
+            "players": [
+            {"name": "'C' Euiji Yang(R) 11"},
+                {"name": "'C' Ji Young Lee(R) 18"}, 
+                {"name": "'IF' Baekho Kang(L) 14"}, 
+                {"name": "'IF' ByungHo Park(R) 13"},
+                {"name": "'IF' Ha-Seong Kim(R) 62"},
+                {"name": "'IF' Hyseong Kim(R) 28"}, 
+                {"name": "'IF' Jeong Choi(R) 64"}, 
+                {"name": "'IF' Ji Hwan Oh(L) 3"},
+                {"name": "'IF' Tommy Edman(S) 4"},
+                {"name": "'OF' Hae-Min Park(R) 2"}, 
+                {"name": "'OF' Hyun Soo Kim(L) 15"}, 
+                {"name": "'OF' Ji Hoon Choi(L) 10"},
+                {"name": "'OF' Jung Hoo Lee(L) 53"},
+                {"name": "'OF' Kunwoo Park(R) 81" }, 
+                {"name": "'OF' Sung Bum Na(L) 7"}]
+        },
+        "Mexico": {
+            "name": "Mexico",
+            "players": [
+            {"name": "'C' Alejandro Kirk(R) 30"},
+                {"name": "'C' Austin Barnes(R) 15"}, 
+                {"name": "'IF' Alan Trejo(R) 13"}, 
+                {"name": "'IF' Isaac Paredes(R) 17"},
+                {"name": "'IF' Joey Meneses(R) 45"},
+                {"name": "'IF' Jonathan Aranda(L) 62"}, 
+                {"name": "'IF' Luis Urías(R) 2"}, 
+                {"name": "'IF' Roberto Valenzuela(R) 3"},
+                {"name": "'IF' Rowdy Tellez(L) 11"},
+                {"name": "'OF' Alek Thomas(L) 5"}, 
+                {"name": "'OF' Alex Verdugo(L) 99"}, 
+                {"name": "'OF' Jarren Duran(L) 16"},
+                {"name": "'OF' Jose CardonA(R) 91"},
+                {"name": "'OF' Randy Arozarena(R) 56" }]
+        },
+        "Netherlands": {
+            "name": "Netherlands",
+            "players": [
+            {"name": "'C' Chadwick Tromp(R) 60"},
+                {"name": "'C' Dashenko Ricardo(R) 18"}, 
+                {"name": "'C' Sicnarf Loopstok(R) 44"}, 
+                {"name": "'IF' Andrelton Simmons(R) 13"},
+                {"name": "'IF' Didi Gregorius(R) 62"},
+                {"name": "'IF' Dwayne Kemp(R) 28"}, 
+                {"name": "'IF' Jonathan Schoop(R) 64"}, 
+                {"name": "'IF' Juremi Profar(R) 3"},
+                {"name": "'IF' Richie Palacios(L) 4"},
+                {"name": "'IF' Sharlon Schoop(R) 2"}, 
+                {"name": "'IF' Xander Bogaerts(R) 15"}, 
+                {"name": "'IF' Zander Wiel(R) 10"},
+                {"name": "'OF' Josh Palacios(L) 53"},
+                {"name": "'OF' Ray-Patrick Didder(R) 81" }, 
+                {"name": "'OF' Roger Bernadina(L) 7"}, 
+                {"name": "'OF' Wladimir Balentien(R) 79"}]
+        },
+        "Nicaragua": {
+            "name": "Nicaragua",
+            "players": [
+            {"name": "'C' Melvin Novoa(R) 91"},
+                {"name": "'C' Rodolfo Bone(R) 85"}, 
+                {"name": "'IF' Alex Blandino(R) 14"}, 
+                {"name": "'IF' Benjamin Alegria(R) 13"},
+                {"name": "'IF' Cheslor Cuthbert(R) 62"},
+                {"name": "'IF' Elian Miranda(R) 28"}, 
+                {"name": "'IF' Ivan Marin(R) 64"}, 
+                {"name": "'IF' Juan Montes(R) 3"},
+                {"name": "'IF' Milkar Perez(R) 87"},
+                {"name": "'IF' Steven Leyton(R) 2"}, 
+                {"name": "'IF' Wuillians Vasquez(S) 15"}, 
+                {"name": "'OF' Dwight Britton(R) 10"},
+                {"name": "'OF' Isaac Benard(L) 84"},
+                {"name": "'OF' Norlando Valle(L) 81" }, 
+                {"name": "'OF' Sandy Bermudez(R) 7"}]
+        },
+        "Panama": {
+            "name": "Panama",
+            "players": [
+            {"name": "'C' Erasmo Caballero(S) 11"},
+                {"name": "'C' Iván Herrera(R) 48"}, 
+                {"name": "'IF' Allen Córdoba(R) 79"}, 
+                {"name": "'IF' Christian Bethancourt(R) 14"},
+                {"name": "'IF' Edgar Munoz(R) 62"},
+                {"name": "'IF' Gerald Chin(L) 28"}, 
+                {"name": "'IF' Jonathan Araúz(S) 36"}, 
+                {"name": "'IF' Jose Caballero(R) 76"},
+                {"name": "'IF' Joshwan Wright(R) 4"},
+                {"name": "'IF' Rubén Tejada(R) 2"}, 
+                {"name": "'OF' Jahdiel Santamaria(R) 15"}, 
+                {"name": "'OF' Jhonny Santos(L) 10"},
+                {"name": "'OF' Jose Ramos(R) 80"},
+                {"name": "'OF' L.J. Jones(R) 81" }, 
+                {"name": "'OF' Luis Castillo(S) 7"}, 
+                {"name": "'OF' Rodrigo Orozco(S) 79"}]
+        },
+        "Puerto Rico": {
+            "name": "Puerto Rico",
+            "players": [
+            {"name": "'C' Christian Vázquez(R) 82"},
+                {"name": "'C' MJ Melendez(L) 15"}, 
+                {"name": "'C' Martín Maldonado(R) 5"}, 
+                {"name": "'IF' Edwin Díaz(R) 82"},
+                {"name": "'IF' Emmanuel River(R) 15"},
+                {"name": "'IF' Enrique Hernánde(R) 5"}, 
+                {"name": "'IF' Francisco Lindor(S) 12"}, 
+                {"name": "'IF' Javier Báez(R) 28"},
+                {"name": "'IF' Jose Miranda(R) 64"},
+                {"name": "'IF' Neftali Soto(R) 18"}, 
+                {"name": "'IF' Vimael Machín(L) 39"}, 
+                {"name": "'OF' Eddie Rosario(L) 8"},
+                {"name": "'OF' Henry Ramos(S) 87"},
+                {"name": "'OF' Nelson Velázquez(R) 4" }]
+        },
+        "USA": {
+            "name": "USA",
+            "players": [
+            {"name": "'C' J.T. Realmuto(R) 10"},
+                {"name": "'C' Kyle Higashioka(R) 66"}, 
+                {"name": "'C' Will Smith(R) 16"}, 
+                {"name": "'IF' Bobby Witt Jr.(R) 7"},
+                {"name": "'IF' Nolan Arenado(R) 28"},
+                {"name": "'IF' Paul Goldschmidt(L) 46"}, 
+                {"name": "'IF' Pete Alonso(R) 20"}, 
+                {"name": "'IF' Tim Anderson(R) 7"},
+                {"name": "'IF' Trea Turner(S) 7"},
+                {"name": "'OF' Cedric Mullins(S) 31"}, 
+                {"name": "'OF' Jeff McNeil(R) 1"}, 
+                {"name": "'OF' Kyle Schwarber(L) 12"},
+                {"name": "'OF' Kyle Tucker(R) 30"},
+                {"name": "'OF' Mike Trout(R) 27" }, 
+                {"name": "'OF' Mookie Betts(L) 50"}]
+        },
+        "Venezuela": {
+            "name": "Venezuela",
+            "players": [
+            {"name": "'C' Alex Hall(S) 9"},
+                {"name": "'C' Jordan McArdle(L)"}, 
+                {"name": "'C' Robbie Perkins(R) 86"}, 
+                {"name": "'C' Ryan Battaglia(R)"},
+                {"name": "'IF' Darryl George(R) 65"},
+                {"name": "'IF' Jake Bowey(L)"}, 
+                {"name": "'IF' Jarryd Dale(R) 84"}, 
+                {"name": "'IF' Liam Spence(R)"},
+                {"name": "'IF' Logan Wade(S)"},
+                {"name": "'IF' Rixon Wingrove(L) 52"}, 
+                {"name": "'IF' Robbie Glendinning(R) 86"}, 
+                {"name": "'OF' Aaron Whitefield(R)"},
+                {"name": "'OF' Andrew Campbell(L)"},
+                {"name": "'CF' Ulrich Bojarski(R) 68" }]
+        }
+    }
+
+    var teamColorsData = {
+    "Australia": ["#A71930", "#000000"],
+    "Canada": ["#13274F", "#CE1141"],
+    "China": ["#DF4601", "#000000"],
+    "Chinese Taipei": ["#C60C30", "#FFFFFF"],
+    "Colombia": ["#0E3386", "#CC3433"],
+    "Cuba": ["#000000", "#C4CED4"],
+    "Czech Republic": ["#C6011F", "#000000"],
+    "Dominican Republic": ["#E31937", "#000000"],
+    "Great Britain": ["#333366", "#C4CED4"],
+    "Israel": ["#0C2340", "#F2DCDE"],
+    "Italy": ["#EB6E1F", "#002D62"],
+    "Japan": ["#004687", "#C09A5B"],
+    "Korea": ["#BA0021", "#003263"],
+    "Mexico": ["#005A9C", "#FFFFFF"],
+    "Netherlands": ["#0077C8", "#F9423A"],
+    "Nicaragua": ["#0A2351", "#B6922E"],
+    "Panama": ["#002B5C", "#D31145"],
+    "Puerto Rico": ["#002D72", "#DF4601"],
+    "USA": ["#002D72", "#FFFFFF"],
+    "Venezuela": ["#E81828", "#FFFFFF"]
+    };       
+
+
+    // Get all lineup-slots
+    const lineupSloters = document.querySelectorAll('.lineup-slot');
+
+    // Loop through the lineup slots and add numbers
+    for (let i = 0; i < lineupSloters.length; i++) {
+    const lineupSlot = lineupSloters[i];
+
+    // Create a new element for the lineup number
+    const lineupNumber = document.createElement('div');
+    lineupNumber.classList.add('lineup-number');
+    lineupNumber.innerText = i + 1;
+
+    // Append the lineup number to the lineup slot
+    lineupSlot.appendChild(lineupNumber);
+    }
+
+    // Get all lineup-slots
+    const lineupSloteroos = document.querySelectorAll('.lineup-slot');
+
+    // Loop through the lineup slots and add Positions
+    for (let i = 0; i < lineupSloteroos.length; i++) {
+    const lineupSlot = lineupSloteroos[i];
+
+    // Create a new element for the lineup Position
+    const lineupPosition = document.createElement('div');
+    lineupPosition.classList.add('lineup-position');
+    lineupPosition.innerText = '';
+
+    // Append the lineup Position to the lineup slot
+    lineupSlot.appendChild(lineupPosition);
+    }
+    
+    var positions = ["C", "DH", "1B", "2B", "3B", "SS", "LF", "RF", "CF"];
+
+    $(document).ready(function() {
+    // Append the positions to the position-rectangle
+    for (var i = 0; i < positions.length; i++) {
+        var position = $('<div class="position">' + positions[i] + '</div>');
+        $('.position-rectangle').append(position);
+    }
+
+    // Make each position draggable
+    $('.position').draggable({
+        helper: 'clone',
+        cursor: 'move'
+    });
+
+    // Make each lineup-position droppable
+    $('.lineup-position').droppable({
+        accept: '.position',
+        drop: function(event, ui) {
+        $(this).empty();
+        $(this).append(ui.draggable.clone());
+        }
+    });
+    });
+
+    function clearPositions() {
+  $('.lineup-rectangle .position').remove();
+}
+
+
+    // Select the dropdown menu element
+    var dropdown = $('.dropdown-menu');
+
+    let selectedTeamName;
+
+
+    // Iterate over the teams in the data object
+    for (var team in data) {
+        var teamName = data[team].name;
+        // Create a new option element
+        var option = $('<a>', {
+            class: "dropdown-item",
+            href: "#",
+            text: teamName
+        });
+        // Add the option element to the dropdown menu
+        dropdown.append(option);
+    }
+
+
+
+    // Get the players-rectangle element
+    var playersRectangle = document.querySelector('.players-rectangle');
+    // Add a dragover event listener to the players-rectangle
+    playersRectangle.addEventListener('dragover', function(event) {
+        event.preventDefault();
+    });
+
+    // Add a drop event listener to the players-rectangle
+    playersRectangle.addEventListener('drop', function(event) {
+        event.preventDefault();
+        var playerId = event.dataTransfer.getData("text");
+        var player = document.getElementById(playerId);
+        playersRectangle.appendChild(player);
+    });
+
+    // Get the stats-rectangle element
+    var statsRectangle = document.querySelector('.stats-rectangle');
+
+    // Add a global playerId variable
+    let playerId;
+
+    // Declare the teamPlayers variable outside of the click event listener
+    let teamPlayers;
+
+    // Add a click event listener to each team option in the dropdown menu
+    var teamOptions = document.querySelectorAll('.dropdown-item');
+    teamOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            selectedTeamName = this.innerHTML;
+            var teamPlayers = data[selectedTeamName].players;
+            var teamColors = teamColorsData[selectedTeamName];
+
+
+            // Clear the players-rectangle
+            playersRectangle.innerHTML = '';
+
+            // Clear all the lineup slots
+            var lineupSlots = document.querySelectorAll('.lineup-slot');
+            lineupSlots.forEach(function(slot) {
+                var players = slot.querySelectorAll('.player');
+                players.forEach(function(player) {
+                    slot.removeChild(player);
+                });
+            });
+
+
+            clearPositions();
+
+            
+
+            // Iterate over the players in the selected team
+
+            for (var i = 0; i < teamPlayers.length; i++) {
+                var player = teamPlayers[i];
+                var playerName = player.name;
+
+                // Create a new div element for the player
+                (function(){
+                    var playerDiv = document.createElement('div');
+                    playerDiv.classList.add("player", "lineup-player");
+                    playerDiv.innerHTML = playerName;
+                    playerDiv.style.backgroundColor = teamColors[0];
+                    playerDiv.style.color = teamColors[1];
+                    playerDiv.setAttribute("draggable", "true");
+                    playerDiv.id = playerName;
+                    playerDiv.addEventListener("dragstart", function(event) {
+                        event.dataTransfer.setData("text", event.target.id);
+                    });
+                    playerDiv.addEventListener("dragover", function(event) {
+                        event.preventDefault();
+                    });
+                    playerDiv.addEventListener("drop", function(event) {
+                        event.preventDefault();
+                        event.target.appendChild(playerDiv);
+
+                    });
+
+                    // Add the player div to the players-rectangle
+                    playersRectangle.appendChild(playerDiv);
+                })();
+            }
+
+        });
+    });
+
+    
+
+
+    var lineupSlots = document.querySelectorAll(".lineup-slot");
+    // Add a dragover event listener to each lineup slot
+    lineupSlots.forEach(function(slot) {
+        slot.addEventListener('dragover', function(event) {
+            event.preventDefault();
+        });
+        // Add a drop event listener to each lineup slot
+        slot.addEventListener('drop', function(event) {
+            event.preventDefault();
+            var playerId = event.dataTransfer.getData("text");
+            console.log(playerId);
+            var player = document.getElementById(playerId);
+            console.log(player);
+            if (slot.childNodes.length === 2 && slot.querySelector('.player') === null) {
+            slot.appendChild(player);
+            }
+        });
+    });
+
+
+    document.getElementById("help-button").addEventListener("click", function() {
+window.location.href = "help.html";
+});
+
+document.getElementById("mlb-button").addEventListener("click", function() {
+window.location.href = "lineupbuilder.html";
+});
+</script>
+</body>
+</html>
